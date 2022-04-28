@@ -16,23 +16,19 @@ public class TimeSwitch : MonoBehaviour
 
     void Update()
     {
-        if(present.activeInHierarchy == true)
+        if(Input.GetKeyDown(KeyCode.P))
         {
-            if (Input.GetKeyDown(KeyCode.P))
+            if (present.activeInHierarchy == true)
             {
                 past.SetActive(true);
                 present.SetActive(false);
                 Debug.Log("past active");
             }
-        }
-        if(present.activeInHierarchy == false)
-        {
-            if (Input.GetKeyDown(KeyCode.P))
+            if (present.activeInHierarchy == false)
             {
                 past.SetActive(false);
                 present.SetActive(true);
                 Debug.Log("present active");
-
             }
         }
     }
