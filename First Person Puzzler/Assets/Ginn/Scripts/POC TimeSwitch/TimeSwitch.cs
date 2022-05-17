@@ -24,7 +24,7 @@ public class TimeSwitch : MonoBehaviour
                 present.SetActive(false);
                 Debug.Log("past active");
             }
-            if (present.activeInHierarchy == false)
+            else if (present.activeInHierarchy == false)
             {
                 past.SetActive(false);
                 present.SetActive(true);

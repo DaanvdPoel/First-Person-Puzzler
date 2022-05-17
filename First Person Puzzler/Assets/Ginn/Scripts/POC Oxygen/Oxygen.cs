@@ -5,15 +5,15 @@ using UnityEngine;
 public class Oxygen : MonoBehaviour
 {
     [SerializeField] GameObject OxygenHelmet;
+    [SerializeField] GameObject InteractionText;
 
     [SerializeField] private bool oxygenLevel;
     [SerializeField] private float oxygenLoweringTimer = 1;
     [SerializeField] private int oxygenAmmount = 100;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
+        InteractionText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,10 +32,17 @@ public class Oxygen : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        InteractionText.SetActive(true);
         if(other.CompareTag("Oxygen") && Input.GetKeyDown(KeyCode.E))
         {
             oxygenLevel = true;
             OxygenHelmet.SetActive(false);
+            InteractionText.SetActive(false);
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        InteractionText.SetActive(false);
     }
 }
