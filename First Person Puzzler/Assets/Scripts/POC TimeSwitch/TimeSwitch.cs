@@ -7,28 +7,62 @@ public class TimeSwitch : MonoBehaviour
     public GameObject past;
     public GameObject present;
 
+    private Animator animator;
+    public bool pastActive;
+    public bool presentActive;
+    public float TimeSwitchTimer;
 
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     void Start()
     {
         present.SetActive(true);
         past.SetActive(false);
+
+        presentActive = true;
+        pastActive = false;
+
+        animator.SetBool("SwitchPast", pastActive);
+        animator.SetBool("SwitchPresent", presentActive);
+        animator.SetFloat("SwitchTimer", TimeSwitchTimer);
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        animator.SetBool("SwitchPast", pastActive);
+        animator.SetBool("SwitchPresent", presentActive);
+        animator.SetFloat("SwitchTimer", TimeSwitchTimer);
+
+        TimeSwitchTimer -= Time.deltaTime;
+        if (Input.GetKeyUp(KeyCode.P))
         {
-            if (present.activeInHierarchy == true)
+            if (TimeSwitchTimer <= 0f)
             {
-                past.SetActive(true);
-                present.SetActive(false);
-                Debug.Log("past active");
-            }
-            else if (present.activeInHierarchy == false)
-            {
-                past.SetActive(false);
-                present.SetActive(true);
-                Debug.Log("present active");
+
+                if (present.activeInHierarchy == true)
+                {
+                    past.SetActive(true);
+                    present.SetActive(false);
+
+                    pastActive = true;
+                    presentActive = false;
+
+                    Debug.Log("past active");
+                    TimeSwitchTimer = 2f;
+                }
+                else if (present.activeInHierarchy == false)
+                {
+                    past.SetActive(false);
+                    present.SetActive(true);
+
+                    presentActive = true;
+                    pastActive = false;
+
+                    Debug.Log("present active");
+                    TimeSwitchTimer = 2f;
+                }
             }
         }
     }
