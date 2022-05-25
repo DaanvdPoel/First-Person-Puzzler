@@ -6,6 +6,7 @@ public class Oxygen : MonoBehaviour
 {
     [SerializeField] GameObject OxygenHelmet;
     [SerializeField] GameObject InteractionText;
+    [SerializeField] GameObject YouAreDeadText;
 
     [SerializeField] private bool oxygenLevel;
     [SerializeField] private float oxygenLoweringTimer = 1;
@@ -14,6 +15,7 @@ public class Oxygen : MonoBehaviour
     private void Start()
     {
         InteractionText.SetActive(false);
+        YouAreDeadText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,6 +29,11 @@ public class Oxygen : MonoBehaviour
                 oxygenAmmount = oxygenAmmount - 10;
                 oxygenLoweringTimer = 1;
             }
+        }
+
+        if(oxygenAmmount <= 0)
+        {
+            YouAreDeadText.SetActive(true);
         }
     }
 
