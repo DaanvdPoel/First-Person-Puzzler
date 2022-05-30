@@ -20,20 +20,25 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.LeftShift))
+        {
             isRunning = true;
-
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        if (isRunning == false)
-        {
-            Vector3 move = transform.right * x + transform.forward * z;
-            controller.Move(move * Time.deltaTime * movementSpeed);
         }
-        else
+
+        if (GameManager.instance.isTyping == false)
         {
-            Vector3 move = transform.right * x + transform.forward * z;
-            controller.Move(move * Time.deltaTime * sprintSpeed);
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+
+            if (isRunning == false)
+            {
+                Vector3 move = transform.right * x + transform.forward * z;
+                controller.Move(move * Time.deltaTime * movementSpeed);
+            }
+            else
+            {
+                Vector3 move = transform.right * x + transform.forward * z;
+                controller.Move(move * Time.deltaTime * sprintSpeed);
+            }
         }
     }
 }

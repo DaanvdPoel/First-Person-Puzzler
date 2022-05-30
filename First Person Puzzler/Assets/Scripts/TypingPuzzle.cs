@@ -7,16 +7,30 @@ public class TypingPuzzle : MonoBehaviour
 {
     [SerializeField] private Text wordOutput;
     [SerializeField] private string password;
-    [SerializeField] private GameObject UI;
-    private bool canType = false;
+    [SerializeField] private GameObject puzzleUI;
+    [SerializeField] private GameObject interactText;
     private string currentTypedWord = "";
 
     // Update is called once per frame
     void Update()
     {
-        if(canType == true)
-        CheckInput();
-     
+        if (GameManager.instance.isTyping == true)
+        {
+            CheckInput();
+        }
+
+        if (interactText.active == true && Input.GetKeyDown(KeyCode.E))
+        {
+            GameManager.instance.isTyping = true;
+            puzzleUI.active = true;
+            interactText.active = false;
+        }
+
+        if(puzzleUI.active && Input.GetKeyDown(KeyCode.Escape))
+        {
+            ExitPuzzle();
+        }
+
         UpdateUI();
     }
 
@@ -30,32 +44,60 @@ public class TypingPuzzle : MonoBehaviour
         if (Input.anyKeyDown)
         {
             currentTypedWord = currentTypedWord + Input.inputString;
-            CheckCorrectPassword();
         }
 
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            currentTypedWord = "";
+            ResetText();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            CheckCorrectPassword();
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        UI.active = true;
-        canType = true;
+        interactText.active = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        UI.active = false;
-        canType = false;
+        interactText.active = false;
     }
 
-    private void CheckCorrectPassword()
+    public void ExitPuzzle()
+    {
+        puzzleUI.active = false;
+        GameManager.instance.isTyping = false;
+        interactText.active = true;
+        currentTypedWord = "";
+    }
+
+    public void CheckCorrectPassword()
     {
         if(currentTypedWord == password)
         {
             Debug.Log("thats Correct Password!!");
+            interactText.active = false;
+            puzzleUI.active = false;
+            GameManager.instance.isTyping = false;
+            Activate();
         }
+        else
+        {
+            Debug.Log("thats Wrong Password!!");
+        }
+    }
+
+    private void Activate()
+    {
+
+    }
+
+    public void ResetText()
+    {
+        currentTypedWord = "";
     }
 }
