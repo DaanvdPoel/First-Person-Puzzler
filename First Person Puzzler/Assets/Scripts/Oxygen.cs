@@ -34,17 +34,21 @@ public class Oxygen : MonoBehaviour
         if(oxygenAmmount <= 0)
         {
             YouAreDeadText.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        InteractionText.SetActive(true);
-        if(other.CompareTag("Oxygen") && Input.GetKeyDown(KeyCode.E))
+        if(other.CompareTag("Oxygen"))
         {
-            oxygenLevel = true;
-            OxygenHelmet.SetActive(false);
-            InteractionText.SetActive(false);
+            InteractionText.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                oxygenLevel = true;
+                OxygenHelmet.SetActive(false);
+                InteractionText.SetActive(false);
+            }
         }
     }
 
