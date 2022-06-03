@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Ginn.unity
     guid: 74cc9fff37526294bb45148c2c713573
   - enabled: 1
-    path: Assets/Scenes/Dave.unity
+    path: Assets/Scenes/Dave/Dave.unity
     guid: 7cc146ccda614694f89b9e7c23472f88
   m_configObjects: {}
