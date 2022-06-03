@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PowerManagement : MonoBehaviour
 {
-    private bool powerEnabled;
-    private bool powerCellOne;
-    private bool powerCellTwo;
-    private bool powerCellThree;
+    [SerializeField] private bool powerEnabled;
+    [SerializeField] private bool powerCellOne;
+    [SerializeField] private bool powerCellTwo;
+    [SerializeField] private bool powerCellThree;
 
 
     // Start is called before the first frame update
@@ -25,6 +25,33 @@ public class PowerManagement : MonoBehaviour
             if (powerCellOne && powerCellTwo && powerCellThree == false)
             {
                 powerCellOne = true;
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("TriggerEntered");
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            if(other.gameObject.CompareTag("PowerOne"))
+            {
+                powerEnabled = true;
+                powerCellOne = true;
+                powerCellTwo = false;
+                powerCellThree = false;
+            }
+            if(other.gameObject.CompareTag("PowerTwo"))
+            {
+                powerCellOne = false;
+                powerCellTwo = true;
+                powerCellThree = false;
+            }
+            if(other.gameObject.CompareTag("PowerThree"))
+            {
+                powerCellOne = false;
+                powerCellTwo = false;
+                powerCellThree = true;
             }
         }
     }

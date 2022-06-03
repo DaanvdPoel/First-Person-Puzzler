@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Oxygen
+  - PowerOne
+  - PowerTwo
+  - PowerThree
   layers:
   - Default
   - TransparentFX
