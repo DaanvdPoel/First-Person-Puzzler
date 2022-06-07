@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2069966554523876840
 Transform:
@@ -89,9 +89,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2069966554523876840}
     m_Modifications:
+    - target: {fileID: 596649132288822067, guid: b982aff619829594eb319fb26ffaf482, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 653603066118162719, guid: b982aff619829594eb319fb26ffaf482, type: 3}
       propertyPath: m_Name
       value: Point Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 653603066118162719, guid: b982aff619829594eb319fb26ffaf482, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4472673837834962478, guid: b982aff619829594eb319fb26ffaf482, type: 3}
       propertyPath: m_RootOrder
