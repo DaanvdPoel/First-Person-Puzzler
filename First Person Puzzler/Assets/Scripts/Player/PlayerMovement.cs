@@ -7,11 +7,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float movementSpeed = 10;
     [SerializeField] private float sprintSpeed = 15;
     [SerializeField] private float jumpForce = 5;
+    [SerializeField] private float gravity = -9.81f;
 
     [HideInInspector]
     public bool isRunning;
     private CharacterController controller;
-
+    private Vector3 velocity;
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -40,5 +41,19 @@ public class PlayerMovement : MonoBehaviour
                 controller.Move(move * Time.deltaTime * sprintSpeed);
             }
         }
+
+        //gravity
+        velocity.y = velocity.y + gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    Debug.Log("test");
+    //    if (collision.gameObject.CompareTag("Ground"))
+    //    {
+    //        velocity.y = 0;
+    //        Debug.Log("test");
+    //    }
+    //}
 }
