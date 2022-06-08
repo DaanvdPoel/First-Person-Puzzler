@@ -2,27 +2,33 @@ using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour
 {
-    [SerializeField]
-    private Door Door;
+    public bool isDoorLocked = false;
+    [SerializeField] private Door[] doors;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<CharacterController>(out CharacterController controller))
+        if (other.TryGetComponent<CharacterController>(out CharacterController controller) && isDoorLocked == false)
         {
-            if (!Door.IsOpen)
+            for (int i = 0; i < doors.Length; i++)
             {
-                Door.Open(other.transform.position);
+                if (!doors[i].IsOpen)
+                {
+                    doors[i].Open(other.transform.position);
+                }
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent<CharacterController>(out CharacterController controller))
+        if (other.TryGetComponent<CharacterController>(out CharacterController controller) && isDoorLocked == false)
         {
-            if (Door.IsOpen)
+            for (int i = 0; i < doors.Length; i++)
             {
-                Door.Close();
+                if (doors[i].IsOpen)
+                {
+                    doors[i].Close();
+                }
             }
         }
     }
