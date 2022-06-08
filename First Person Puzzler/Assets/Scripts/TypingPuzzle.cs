@@ -85,7 +85,7 @@ public class TypingPuzzle : MonoBehaviour
             GameManager.instance.isTyping = false;
             Activate();
         }
-        else
+        else if(currentTypedWord != password)
         {
             Debug.Log("thats Wrong Password!!");
         }
@@ -93,7 +93,7 @@ public class TypingPuzzle : MonoBehaviour
 
     private void Activate()
     {
-
+        CheckpointManager.instance.puzzlesComplete[0] = true;
     }
 
     public void ResetText()
