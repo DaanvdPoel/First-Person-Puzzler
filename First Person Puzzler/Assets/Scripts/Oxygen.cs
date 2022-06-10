@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Oxygen : MonoBehaviour
 {
     [SerializeField] GameObject OxygenHelmet;
     [SerializeField] GameObject InteractionText;
     [SerializeField] GameObject YouAreDeadText;
+    [SerializeField] TextMeshProUGUI OxygenText;
 
     [SerializeField] private bool oxygenLevel;
     [SerializeField] private float oxygenLoweringTimer = 1;
@@ -17,10 +19,11 @@ public class Oxygen : MonoBehaviour
         InteractionText.SetActive(false);
         YouAreDeadText.SetActive(false);
     }
-
     // Update is called once per frame
     void FixedUpdate()
     {
+        OxygenText.text = "Oxygen level: " + oxygenAmmount;
+
         if (oxygenLevel == false)
         {
             oxygenLoweringTimer = oxygenLoweringTimer -= Time.deltaTime;
@@ -29,6 +32,10 @@ public class Oxygen : MonoBehaviour
                 oxygenAmmount = oxygenAmmount - 10;
                 oxygenLoweringTimer = 1;
             }
+        }
+        if(oxygenLevel == true)
+        {
+            oxygenAmmount = 100;
         }
 
         if(oxygenAmmount <= 0)
