@@ -41,7 +41,7 @@ public class TypingPuzzle : MonoBehaviour
 
     private void CheckInput()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && Input.GetKeyDown(KeyCode.Return) != true)
         {
             currentTypedWord = currentTypedWord + Input.inputString;
         }
@@ -93,7 +93,7 @@ public class TypingPuzzle : MonoBehaviour
 
     private void Activate()
     {
-
+        CheckpointManager.instance.puzzlesComplete[0] = true;
     }
 
     public void ResetText()
