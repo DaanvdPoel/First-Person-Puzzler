@@ -13,11 +13,24 @@ public class PowerManagement : MonoBehaviour
     [SerializeField] private GameObject powerDoorsTwo;
     [SerializeField] private GameObject powerDoorsThree;
 
+    [SerializeField] private GameObject powerLightingCellOneEnabled;
+    [SerializeField] private GameObject powerLightingCellTwoEnabled;
+    [SerializeField] private GameObject powerLightingCellThreeEnabled;
+
+    [SerializeField] private GameObject powerLightingCellOneDisabled;
+    [SerializeField] private GameObject powerLightingCellTwoDisabled;
+    [SerializeField] private GameObject powerLightingCellThreeDisabled;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         powerEnabled = false;
+        powerLightingCellOneDisabled.SetActive(true);
+
+
+        powerLightingCellOneEnabled.SetActive(false);
 
     }
 
@@ -29,6 +42,7 @@ public class PowerManagement : MonoBehaviour
             if (powerCellOne && powerCellTwo && powerCellThree == false)
             {
                 powerCellOne = true;
+
             }
         }
     }
@@ -48,6 +62,9 @@ public class PowerManagement : MonoBehaviour
                 powerDoorsOne.SetActive(false);
                 powerDoorsTwo.SetActive(true);
                 powerDoorsThree.SetActive(true);
+
+                powerLightingCellOneEnabled.SetActive(true);
+                powerLightingCellOneDisabled.SetActive(false);
             }
             if(other.gameObject.CompareTag("PowerTwo"))
             {

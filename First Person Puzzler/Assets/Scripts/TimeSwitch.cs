@@ -7,6 +7,9 @@ public class TimeSwitch : MonoBehaviour
     public GameObject past;
     public GameObject present;
 
+    [SerializeField] GameObject pastText;
+    [SerializeField] GameObject presentText;
+
     private Animator animator;
     public bool pastActive;
     public bool presentActive;
@@ -18,11 +21,16 @@ public class TimeSwitch : MonoBehaviour
     }
     void Start()
     {
+        StartCoroutine(GiveTimeSwitchTextHint());
+
         present.SetActive(true);
         past.SetActive(false);
 
         presentActive = true;
         pastActive = false;
+
+        pastText.SetActive(false);
+        presentText.SetActive(false);
 
         animator.SetBool("SwitchPast", pastActive);
         animator.SetBool("SwitchPresent", presentActive);
@@ -38,6 +46,8 @@ public class TimeSwitch : MonoBehaviour
         TimeSwitchTimer -= Time.deltaTime;
         if (Input.GetKeyUp(KeyCode.P))
         {
+            pastText.SetActive(false);
+            presentText.SetActive(false);
             if (TimeSwitchTimer <= 0f)
             {
 
@@ -49,7 +59,6 @@ public class TimeSwitch : MonoBehaviour
                     pastActive = true;
                     presentActive = false;
 
-                    Debug.Log("past active");
                     TimeSwitchTimer = 2f;
                 }
                 else if (present.activeInHierarchy == false)
@@ -60,10 +69,27 @@ public class TimeSwitch : MonoBehaviour
                     presentActive = true;
                     pastActive = false;
 
-                    Debug.Log("present active");
                     TimeSwitchTimer = 2f;
                 }
             }
+
+            StartCoroutine(GiveTimeSwitchTextHint());
         }
+    }
+
+    IEnumerator GiveTimeSwitchTextHint()
+    {
+        yield return new WaitForSeconds(2f);
+        if(presentActive == true)
+        {
+            pastText.SetActive(true);
+        }
+        if (pastActive == true)
+        {
+            presentText.SetActive(true);
+        }
+        yield return new WaitForSeconds(5f);
+        pastText.SetActive(false);
+        presentText.SetActive(false);
     }
 }
