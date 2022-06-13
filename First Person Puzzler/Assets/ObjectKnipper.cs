@@ -8,9 +8,11 @@ public class ObjectKnipper : MonoBehaviour
     public Vector2 cooldown, duration;
     float cooldownT, durationT;
     public GameObject toggledObject;
+    bool startingState;
     // Start is called before the first frame update
     void Start()
     {
+        startingState = toggledObject.active;
         ResetTimer();
     }
     
@@ -43,9 +45,9 @@ public class ObjectKnipper : MonoBehaviour
     
     IEnumerator bruh()
     {
-        toggledObject.SetActive(!toggledObject.active);
+        toggledObject.SetActive(!startingState);
         yield return new WaitForSeconds(durationT);
-        toggledObject.SetActive(!toggledObject.active);
+        toggledObject.SetActive(startingState);
         ResetTimer();
         
     }
