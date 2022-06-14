@@ -42,7 +42,6 @@ public class PowerManagement : MonoBehaviour
             if (powerCellOne && powerCellTwo && powerCellThree == false)
             {
                 powerCellOne = true;
-
             }
         }
     }
@@ -65,6 +64,10 @@ public class PowerManagement : MonoBehaviour
 
                 powerLightingCellOneEnabled.SetActive(true);
                 powerLightingCellOneDisabled.SetActive(false);
+                powerLightingCellTwoEnabled.SetActive(false);
+                powerLightingCellTwoDisabled.SetActive(true);
+                powerLightingCellThreeEnabled.SetActive(false);
+                powerLightingCellThreeDisabled.SetActive(true);
             }
             if(other.gameObject.CompareTag("PowerTwo"))
             {
@@ -75,6 +78,13 @@ public class PowerManagement : MonoBehaviour
                 powerDoorsOne.SetActive(true);
                 powerDoorsTwo.SetActive(false);
                 powerDoorsThree.SetActive(true);
+
+                powerLightingCellOneEnabled.SetActive(false);
+                powerLightingCellOneDisabled.SetActive(true);
+                powerLightingCellTwoEnabled.SetActive(true);
+                powerLightingCellTwoDisabled.SetActive(false);
+                powerLightingCellThreeEnabled.SetActive(false);
+                powerLightingCellThreeDisabled.SetActive(true);
             }
             if(other.gameObject.CompareTag("PowerThree"))
             {
@@ -85,6 +95,13 @@ public class PowerManagement : MonoBehaviour
                 powerDoorsOne.SetActive(true);
                 powerDoorsTwo.SetActive(true);
                 powerDoorsThree.SetActive(false);
+
+                powerLightingCellOneEnabled.SetActive(false);
+                powerLightingCellOneDisabled.SetActive(true);
+                powerLightingCellTwoEnabled.SetActive(false);
+                powerLightingCellTwoDisabled.SetActive(true);
+                powerLightingCellThreeEnabled.SetActive(true);
+                powerLightingCellThreeDisabled.SetActive(false);
             }
         }
     }

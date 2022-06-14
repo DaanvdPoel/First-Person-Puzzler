@@ -60,6 +60,7 @@ public class TypingPuzzle : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         interactText.active = true;
+
     }
 
     private void OnTriggerExit(Collider other)
