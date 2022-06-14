@@ -8,11 +8,12 @@ TagManager:
   - PowerOne
   - PowerTwo
   - PowerThree
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ignore Lighting
   - Water
   - UI
   - Ground

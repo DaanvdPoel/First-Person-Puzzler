@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 5167380121219228598}
   - component: {fileID: 8077737283142347795}
   - component: {fileID: 6340245888097589465}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tl_light_group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5167380121219228598
 Transform:
@@ -89,9 +89,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5167380121219228598}
     m_Modifications:
+    - target: {fileID: 596649132288822067, guid: b982aff619829594eb319fb26ffaf482, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 596649132288822067, guid: b982aff619829594eb319fb26ffaf482, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 596649132288822067, guid: b982aff619829594eb319fb26ffaf482, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 596649132288822067, guid: b982aff619829594eb319fb26ffaf482, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 653603066118162719, guid: b982aff619829594eb319fb26ffaf482, type: 3}
       propertyPath: m_Name
       value: Point Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 653603066118162719, guid: b982aff619829594eb319fb26ffaf482, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 653603066118162719, guid: b982aff619829594eb319fb26ffaf482, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4472673837834962478, guid: b982aff619829594eb319fb26ffaf482, type: 3}
       propertyPath: m_RootOrder
@@ -103,7 +127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4472673837834962478, guid: b982aff619829594eb319fb26ffaf482, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.71128
+      value: -27.4
       objectReference: {fileID: 0}
     - target: {fileID: 4472673837834962478, guid: b982aff619829594eb319fb26ffaf482, type: 3}
       propertyPath: m_LocalPosition.z
