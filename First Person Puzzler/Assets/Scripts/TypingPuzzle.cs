@@ -9,6 +9,7 @@ public class TypingPuzzle : MonoBehaviour
     [SerializeField] private string password;
     [SerializeField] private GameObject puzzleUI;
     [SerializeField] private GameObject interactText;
+    [SerializeField] private DoorTrigger door; //if the puzzle is solved this door wil open
     private string currentTypedWord = "";
 
     // Update is called once per frame
@@ -101,6 +102,7 @@ public class TypingPuzzle : MonoBehaviour
     private void Activate()
     {
         CheckpointManager.instance.puzzlesComplete[0] = true;
+        door.isDoorLocked = false;
     }
 
     public void ResetText()
