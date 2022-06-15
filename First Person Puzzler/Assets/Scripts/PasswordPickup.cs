@@ -18,7 +18,7 @@ public class PasswordPickup : MonoBehaviour
         if(other.gameObject == passwordPickup && Input.GetKey(KeyCode.E))
         {
             passwordTextObject.SetActive(true);
-            passwordText.text = "the password is...".ToString();
+            passwordText.text = "the password is: incognition".ToString();
         }
     }
 
