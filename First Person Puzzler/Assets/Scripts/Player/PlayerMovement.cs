@@ -4,56 +4,36 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 10;
-    [SerializeField] private float sprintSpeed = 15;
-    [SerializeField] private float jumpForce = 5;
-    [SerializeField] private float gravity = -9.81f;
+    public CharacterController controller;
 
-    [HideInInspector]
-    public bool isRunning;
-    private CharacterController controller;
-    private Vector3 velocity;
-    void Start()
-    {
-        controller = GetComponent<CharacterController>();
-    }
+    public float speed = 12f;
+    public float gravity = -9.8f;
+
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundmask;
+
+    Vector3 velocity;
+    bool IsGrounded;
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        IsGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundmask);
+
+        if (IsGrounded && velocity.y < 0)
         {
-            isRunning = true;
+            velocity.y = -2f;
         }
 
-        if (GameManager.instance.isTyping == false)
-        {
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
 
-            if (isRunning == false)
-            {
-                Vector3 move = transform.right * x + transform.forward * z;
-                controller.Move(move * Time.deltaTime * movementSpeed);
-            }
-            else
-            {
-                Vector3 move = transform.right * x + transform.forward * z;
-                controller.Move(move * Time.deltaTime * sprintSpeed);
-            }
-        }
+        Vector3 move = transform.right * x + transform.forward * z;
 
-        //gravity
-        velocity.y = velocity.y + gravity * Time.deltaTime;
+        controller.Move(move * speed * Time.deltaTime);
+
+        velocity.y += gravity * Time.deltaTime;
+
         controller.Move(velocity * Time.deltaTime);
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    Debug.Log("test");
-    //    if (collision.gameObject.CompareTag("Ground"))
-    //    {
-    //        velocity.y = 0;
-    //        Debug.Log("test");
-    //    }
-    //}
 }

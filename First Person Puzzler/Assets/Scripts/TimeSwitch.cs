@@ -7,10 +7,14 @@ public class TimeSwitch : MonoBehaviour
     public GameObject past;
     public GameObject present;
 
+    [SerializeField] GameObject pastText;
+    [SerializeField] GameObject presentText;
+
     private Animator animator;
     public bool pastActive;
     public bool presentActive;
-    public float TimeSwitchTimer;
+    public float timeSwitchTimer;
+    public float showHint;
 
     private void Awake()
     {
@@ -18,27 +22,37 @@ public class TimeSwitch : MonoBehaviour
     }
     void Start()
     {
+        GiveTimeSwitchTextHint();
+
         present.SetActive(true);
         past.SetActive(false);
 
         presentActive = true;
         pastActive = false;
 
+        pastText.SetActive(false);
+        presentText.SetActive(false);
+
         animator.SetBool("SwitchPast", pastActive);
         animator.SetBool("SwitchPresent", presentActive);
-        animator.SetFloat("SwitchTimer", TimeSwitchTimer);
+        animator.SetFloat("SwitchTimer", timeSwitchTimer);
+
     }
 
     void FixedUpdate()
     {
         animator.SetBool("SwitchPast", pastActive);
         animator.SetBool("SwitchPresent", presentActive);
-        animator.SetFloat("SwitchTimer", TimeSwitchTimer);
+        animator.SetFloat("SwitchTimer", timeSwitchTimer);
 
-        TimeSwitchTimer -= Time.deltaTime;
+        timeSwitchTimer -= Time.deltaTime;
+        showHint = showHint += Time.deltaTime;
+
         if (Input.GetKeyUp(KeyCode.P))
         {
-            if (TimeSwitchTimer <= 0f)
+            pastText.SetActive(false);
+            presentText.SetActive(false);
+            if (timeSwitchTimer <= 0f)
             {
 
                 if (present.activeInHierarchy == true)
@@ -49,8 +63,7 @@ public class TimeSwitch : MonoBehaviour
                     pastActive = true;
                     presentActive = false;
 
-                    Debug.Log("past active");
-                    TimeSwitchTimer = 2f;
+                    timeSwitchTimer = 2f;
                 }
                 else if (present.activeInHierarchy == false)
                 {
@@ -60,9 +73,24 @@ public class TimeSwitch : MonoBehaviour
                     presentActive = true;
                     pastActive = false;
 
-                    Debug.Log("present active");
-                    TimeSwitchTimer = 2f;
+                    timeSwitchTimer = 2f;
                 }
+            }
+        }
+        GiveTimeSwitchTextHint();
+    }
+
+    private void GiveTimeSwitchTextHint()
+    {
+        if(showHint > 2f)
+        {
+            if (presentActive == true)
+            {
+                pastText.SetActive(true);
+            }
+            if (pastActive == true)
+            {
+                presentText.SetActive(true);
             }
         }
     }

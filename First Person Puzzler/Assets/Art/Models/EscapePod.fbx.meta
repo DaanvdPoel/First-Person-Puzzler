@@ -3,7 +3,22 @@ guid: bddaea845de74a74ea26ca4804b57416
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MotivationalPosterTexture
+    second: {fileID: 2100000, guid: fa6650f8c7d8858489fe4ee6ded0df77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window
+    second: {fileID: 8556262120643298411, guid: 3427dc64f6989c944abbaff54a7389ed, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: ce9376bf2b4babf4e8a2c910cfbec638, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
