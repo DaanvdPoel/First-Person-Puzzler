@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerManagement : MonoBehaviour
 {
-    [SerializeField] private bool powerEnabled;
+    public bool powerEnabled;
     [SerializeField] private bool powerCellOne;
     [SerializeField] private bool powerCellTwo;
     [SerializeField] private bool powerCellThree;
@@ -21,24 +21,27 @@ public class PowerManagement : MonoBehaviour
     [SerializeField] private GameObject powerLightingCellTwoDisabled;
     [SerializeField] private GameObject powerLightingCellThreeDisabled;
 
-
+    private PowerOnAnimated powerAnimated;
 
     // Start is called before the first frame update
     void Start()
     {
+
         powerEnabled = false;
         powerLightingCellOneDisabled.SetActive(true);
 
-
         powerLightingCellOneEnabled.SetActive(false);
 
-    }
+        powerAnimated = GetComponent<PowerOnAnimated>();
+     }
 
     // Update is called once per frame
     void Update()
     {
         if(powerEnabled == true)
         {
+            powerAnimated.EnablePower();
+
             if (powerCellOne && powerCellTwo && powerCellThree == false)
             {
                 powerCellOne = true;

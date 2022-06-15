@@ -9,6 +9,7 @@ TagManager:
   - PowerTwo
   - PowerThree
   - Ground
+  - PasswordTerminal
   layers:
   - Default
   - TransparentFX

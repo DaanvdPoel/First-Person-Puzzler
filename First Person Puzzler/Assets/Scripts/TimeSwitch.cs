@@ -13,7 +13,8 @@ public class TimeSwitch : MonoBehaviour
     private Animator animator;
     public bool pastActive;
     public bool presentActive;
-    public float TimeSwitchTimer;
+    public float timeSwitchTimer;
+    public float showHint;
 
     private void Awake()
     {
@@ -21,7 +22,7 @@ public class TimeSwitch : MonoBehaviour
     }
     void Start()
     {
-        StartCoroutine(GiveTimeSwitchTextHint());
+        GiveTimeSwitchTextHint();
 
         present.SetActive(true);
         past.SetActive(false);
@@ -34,21 +35,24 @@ public class TimeSwitch : MonoBehaviour
 
         animator.SetBool("SwitchPast", pastActive);
         animator.SetBool("SwitchPresent", presentActive);
-        animator.SetFloat("SwitchTimer", TimeSwitchTimer);
+        animator.SetFloat("SwitchTimer", timeSwitchTimer);
+
     }
 
     void FixedUpdate()
     {
         animator.SetBool("SwitchPast", pastActive);
         animator.SetBool("SwitchPresent", presentActive);
-        animator.SetFloat("SwitchTimer", TimeSwitchTimer);
+        animator.SetFloat("SwitchTimer", timeSwitchTimer);
 
-        TimeSwitchTimer -= Time.deltaTime;
+        timeSwitchTimer -= Time.deltaTime;
+        showHint = showHint += Time.deltaTime;
+
         if (Input.GetKeyUp(KeyCode.P))
         {
             pastText.SetActive(false);
             presentText.SetActive(false);
-            if (TimeSwitchTimer <= 0f)
+            if (timeSwitchTimer <= 0f)
             {
 
                 if (present.activeInHierarchy == true)
@@ -59,7 +63,7 @@ public class TimeSwitch : MonoBehaviour
                     pastActive = true;
                     presentActive = false;
 
-                    TimeSwitchTimer = 2f;
+                    timeSwitchTimer = 2f;
                 }
                 else if (present.activeInHierarchy == false)
                 {
@@ -69,27 +73,25 @@ public class TimeSwitch : MonoBehaviour
                     presentActive = true;
                     pastActive = false;
 
-                    TimeSwitchTimer = 2f;
+                    timeSwitchTimer = 2f;
                 }
             }
-
-            StartCoroutine(GiveTimeSwitchTextHint());
         }
+        GiveTimeSwitchTextHint();
     }
 
-    IEnumerator GiveTimeSwitchTextHint()
+    private void GiveTimeSwitchTextHint()
     {
-        yield return new WaitForSeconds(2f);
-        if(presentActive == true)
+        if(showHint > 2f)
         {
-            pastText.SetActive(true);
+            if (presentActive == true)
+            {
+                pastText.SetActive(true);
+            }
+            if (pastActive == true)
+            {
+                presentText.SetActive(true);
+            }
         }
-        if (pastActive == true)
-        {
-            presentText.SetActive(true);
-        }
-        yield return new WaitForSeconds(5f);
-        pastText.SetActive(false);
-        presentText.SetActive(false);
     }
 }
