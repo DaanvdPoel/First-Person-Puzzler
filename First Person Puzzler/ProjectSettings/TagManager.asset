@@ -9,6 +9,7 @@ TagManager:
   - PowerTwo
   - PowerThree
   - Ground
+  - PasswordTerminal
   layers:
   - Default
   - TransparentFX
@@ -16,6 +17,7 @@ TagManager:
   - Ignore Lighting
   - Water
   - UI
+  - Ground
   - 
   - 
   - 
@@ -40,8 +42,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - PostProcessing
   m_SortingLayers:
   - name: Default
     uniqueID: 0

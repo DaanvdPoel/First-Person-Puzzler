@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerManagement : MonoBehaviour
 {
-    [SerializeField] private bool powerEnabled;
+    public bool powerEnabled;
     [SerializeField] private bool powerCellOne;
     [SerializeField] private bool powerCellTwo;
     [SerializeField] private bool powerCellThree;
@@ -21,28 +21,30 @@ public class PowerManagement : MonoBehaviour
     [SerializeField] private GameObject powerLightingCellTwoDisabled;
     [SerializeField] private GameObject powerLightingCellThreeDisabled;
 
-
+    private PowerOnAnimated powerAnimated;
 
     // Start is called before the first frame update
     void Start()
     {
+
         powerEnabled = false;
         powerLightingCellOneDisabled.SetActive(true);
 
-
         powerLightingCellOneEnabled.SetActive(false);
 
-    }
+        powerAnimated = GetComponent<PowerOnAnimated>();
+     }
 
     // Update is called once per frame
     void Update()
     {
         if(powerEnabled == true)
         {
+            powerAnimated.EnablePower();
+
             if (powerCellOne && powerCellTwo && powerCellThree == false)
             {
                 powerCellOne = true;
-
             }
         }
     }
@@ -65,6 +67,10 @@ public class PowerManagement : MonoBehaviour
 
                 powerLightingCellOneEnabled.SetActive(true);
                 powerLightingCellOneDisabled.SetActive(false);
+                powerLightingCellTwoEnabled.SetActive(false);
+                powerLightingCellTwoDisabled.SetActive(true);
+                powerLightingCellThreeEnabled.SetActive(false);
+                powerLightingCellThreeDisabled.SetActive(true);
             }
             if(other.gameObject.CompareTag("PowerTwo"))
             {
@@ -75,6 +81,13 @@ public class PowerManagement : MonoBehaviour
                 powerDoorsOne.SetActive(true);
                 powerDoorsTwo.SetActive(false);
                 powerDoorsThree.SetActive(true);
+
+                powerLightingCellOneEnabled.SetActive(false);
+                powerLightingCellOneDisabled.SetActive(true);
+                powerLightingCellTwoEnabled.SetActive(true);
+                powerLightingCellTwoDisabled.SetActive(false);
+                powerLightingCellThreeEnabled.SetActive(false);
+                powerLightingCellThreeDisabled.SetActive(true);
             }
             if(other.gameObject.CompareTag("PowerThree"))
             {
@@ -85,6 +98,13 @@ public class PowerManagement : MonoBehaviour
                 powerDoorsOne.SetActive(true);
                 powerDoorsTwo.SetActive(true);
                 powerDoorsThree.SetActive(false);
+
+                powerLightingCellOneEnabled.SetActive(false);
+                powerLightingCellOneDisabled.SetActive(true);
+                powerLightingCellTwoEnabled.SetActive(false);
+                powerLightingCellTwoDisabled.SetActive(true);
+                powerLightingCellThreeEnabled.SetActive(true);
+                powerLightingCellThreeDisabled.SetActive(false);
             }
         }
     }

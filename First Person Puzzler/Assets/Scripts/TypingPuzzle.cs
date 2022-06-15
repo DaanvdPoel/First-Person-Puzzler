@@ -59,12 +59,19 @@ public class TypingPuzzle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        interactText.active = true;
+        if(other.gameObject.CompareTag("Player"))
+        {
+            interactText.active = true;
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        interactText.active = false;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            interactText.active = false;
+        }
     }
 
     public void ExitPuzzle()
