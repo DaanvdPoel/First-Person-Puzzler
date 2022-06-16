@@ -3890,10 +3890,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reinforced_door_High
       objectReference: {fileID: 0}
+    - target: {fileID: 2400732341422656980, guid: c5497743cc248a842b9297e9382c87fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ca365427f052ff4ebc7a5f0b6ed93e1, type: 2}
     - target: {fileID: 2847765134166948834, guid: c5497743cc248a842b9297e9382c87fd, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4160574768683549774, guid: c5497743cc248a842b9297e9382c87fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ca365427f052ff4ebc7a5f0b6ed93e1, type: 2}
     - target: {fileID: 6358386057561312251, guid: c5497743cc248a842b9297e9382c87fd, type: 3}
       propertyPath: SlideDirection.x
       value: -0.1
@@ -3902,6 +3910,10 @@ PrefabInstance:
       propertyPath: SlideDirection.z
       value: -0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7290702766089178654, guid: c5497743cc248a842b9297e9382c87fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ca365427f052ff4ebc7a5f0b6ed93e1, type: 2}
     - target: {fileID: 8357551147920928464, guid: c5497743cc248a842b9297e9382c87fd, type: 3}
       propertyPath: m_RootOrder
       value: 33

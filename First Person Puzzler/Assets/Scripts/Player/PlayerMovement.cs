@@ -18,22 +18,25 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        IsGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundmask);
-
-        if (IsGrounded && velocity.y < 0)
+        if (GameManager.instance.isTyping == false)
         {
-            velocity.y = -2f;
+            IsGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundmask);
+
+            if (IsGrounded && velocity.y < 0)
+            {
+                velocity.y = -2f;
+            }
+
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+
+            Vector3 move = transform.right * x + transform.forward * z;
+
+            controller.Move(move * speed * Time.deltaTime);
+
+            velocity.y += gravity * Time.deltaTime;
+
+            controller.Move(velocity * Time.deltaTime);
         }
-
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        controller.Move(move * speed * Time.deltaTime);
-
-        velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
     }
 }
