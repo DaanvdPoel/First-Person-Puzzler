@@ -3004,7 +3004,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &268327467
 Transform:
   m_ObjectHideFlags: 0
@@ -8700,6 +8700,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2933375724786006726, guid: 56b084572774c0b469451a94df15a855, type: 3}
   m_PrefabInstance: {fileID: 726677222}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &731611554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5273282126273727206, guid: 9d864f707b0a28747b4a02da4bfeac49, type: 3}
+  m_PrefabInstance: {fileID: 4031416956283459637}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &731611555
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731611554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 093c03fbd760ca64ea2113d4e58415be, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &731995040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13920,7 +13944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1208709789
 Transform:
   m_ObjectHideFlags: 0
