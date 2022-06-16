@@ -10,6 +10,9 @@ public class TypingPuzzle : MonoBehaviour
     [SerializeField] private GameObject puzzleUI;
     [SerializeField] private GameObject interactText;
     [SerializeField] private DoorTrigger door; //if the puzzle is solved this door wil open
+
+    [HideInInspector]
+    public bool puzzleComplete = false;
     private string currentTypedWord = "";
 
     // Update is called once per frame
@@ -20,7 +23,7 @@ public class TypingPuzzle : MonoBehaviour
             CheckInput();
         }
 
-        if (interactText.active == true && Input.GetKeyDown(KeyCode.E))
+        if (interactText.active == true && Input.GetKeyDown(KeyCode.E) && puzzleComplete == false)
         {
             GameManager.instance.isTyping = true;
             puzzleUI.active = true;
@@ -60,9 +63,13 @@ public class TypingPuzzle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player") && puzzleComplete == false)
         {
+            puzzleComplete = CheckpointManager.instance.puzzlesComplete[0];
             interactText.active = true;
+        }else if(puzzleComplete == true)
+        {
+            Activate();
         }
 
     }
