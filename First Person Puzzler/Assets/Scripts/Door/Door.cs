@@ -57,6 +57,8 @@ public class Door : MonoBehaviour
 
     private IEnumerator DoRotationOpen(float ForwardAmount)
     {
+        Vector3 endPosition = StartPosition + SlideAmount * SlideDirection;
+        Vector3 startPosition = transform.position;
         Quaternion startRotation = transform.rotation;
         Quaternion endRotation;
 
@@ -75,6 +77,7 @@ public class Door : MonoBehaviour
         while (time < 1)
         {
             transform.rotation = Quaternion.Slerp(startRotation, endRotation, time);
+            transform.position = Vector3.Lerp(startPosition, endPosition, time);
             yield return null;
             time += Time.deltaTime * Speed;
         }
@@ -117,6 +120,8 @@ public class Door : MonoBehaviour
 
     private IEnumerator DoRotationClose()
     {
+        Vector3 endPosition = StartPosition;
+        Vector3 startPosition = transform.position;
         Quaternion startRotation = transform.rotation;
         Quaternion endRotation = Quaternion.Euler(StartRotation);
 
@@ -126,6 +131,7 @@ public class Door : MonoBehaviour
         while (time < 1)
         {
             transform.rotation = Quaternion.Slerp(startRotation, endRotation, time);
+            transform.position = Vector3.Lerp(startPosition, endPosition, time);
             yield return null;
             time += Time.deltaTime * Speed;
         }

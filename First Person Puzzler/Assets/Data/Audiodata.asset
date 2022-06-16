@@ -12,5 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6232019fcdbafa246bac70412952dd9b, type: 3}
   m_Name: Audiodata
   m_EditorClassIdentifier: 
-  soundEffects: []
+  soundEffects:
+  - {fileID: 8300000, guid: b02530c31b6add949811966769c7b5b9, type: 3}
+  - {fileID: 8300000, guid: 344c520b920b3e143a7dc6e883765f80, type: 3}
+  - {fileID: 8300000, guid: 947623c32c993a64a800a9c81113a850, type: 3}
+  - {fileID: 8300000, guid: c81fb646e4d3c2a4cbb4b2f27c26db9c, type: 3}
+  - {fileID: 8300000, guid: 2890726445317304b892f588dc59e04a, type: 3}
+  - {fileID: 8300000, guid: 16ea4a09d1b69ad408b56148b357acab, type: 3}
+  - {fileID: 8300000, guid: 159c4de773bf53140b4dca324209d55f, type: 3}
+  - {fileID: 8300000, guid: 8ef969e4af387d840b64fc459b1a7e76, type: 3}
+  - {fileID: 8300000, guid: ed52e5b7f3a84f74983ef7ee3ce77ea0, type: 3}
   backgroundMusic: []
