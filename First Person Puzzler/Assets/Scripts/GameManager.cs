@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public bool isTyping = false;
+    public bool isDead = false;
 
     private void Awake()
     {
