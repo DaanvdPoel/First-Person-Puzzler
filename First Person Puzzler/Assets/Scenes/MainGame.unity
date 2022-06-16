@@ -13155,7 +13155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &795969289
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28544,7 +28544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 763944283494894782, guid: a1164755aecfbb9438eb75d183e3c9e4, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 763944283494894782, guid: a1164755aecfbb9438eb75d183e3c9e4, type: 3}
       propertyPath: OxygenText
