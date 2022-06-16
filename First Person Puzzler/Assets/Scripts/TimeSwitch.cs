@@ -52,9 +52,8 @@ public class TimeSwitch : MonoBehaviour
         {
             pastText.SetActive(false);
             presentText.SetActive(false);
-            if (timeSwitchTimer <= 0f)
+            if (timeSwitchTimer < 0f)
             {
-
                 if (present.activeInHierarchy == true)
                 {
                     past.SetActive(true);
