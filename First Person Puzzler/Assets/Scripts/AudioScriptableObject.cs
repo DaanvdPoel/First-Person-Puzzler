@@ -5,6 +5,5 @@ public class AudioScriptableObject : ScriptableObject
 {
     public AudioClip[] soundEffects;
     public AudioClip[] backgroundMusic;
-
 }
 
