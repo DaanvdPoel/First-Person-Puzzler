@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 176225287695324816}
   - component: {fileID: 2809138080541458739}
   - component: {fileID: 2400732341422656980}
+  - component: {fileID: 2266928106601958269}
+  - component: {fileID: 1370847718846515005}
   m_Layer: 0
   m_Name: Sliding_Door_1_High
   m_TagString: Untagged
@@ -59,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 3427dc64f6989c944abbaff54a7389ed, type: 3}
+  - {fileID: 2100000, guid: 01939931e86cbfb4e85e6d5d505dfb75, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,6 +83,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2266928106601958269
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137070457919035972}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9065992433945071284, guid: 3427dc64f6989c944abbaff54a7389ed, type: 3}
+--- !u!114 &1370847718846515005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137070457919035972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c2e7ece5e062a409bc239f9359fada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsOpen: 0
+  IsRotatingDoor: 0
+  Speed: 1
+  RotationAmount: 90
+  ForwardDirection: 0
+  SlideDirection: {x: 0, y: 0, z: 0.2}
+  SlideAmount: 15
 --- !u!1 &1396852697829453517
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +127,7 @@ GameObject:
   - component: {fileID: 1885163474796359789}
   - component: {fileID: 1594196912050765740}
   - component: {fileID: 4160574768683549774}
+  - component: {fileID: 6745407068949664048}
   m_Layer: 0
   m_Name: Door_Frame_High 1
   m_TagString: Untagged
@@ -140,7 +176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 3427dc64f6989c944abbaff54a7389ed, type: 3}
+  - {fileID: 2100000, guid: 22eec81d82678ef47a5517a25b006879, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -162,6 +198,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6745407068949664048
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396852697829453517}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4471786905667608195, guid: 3427dc64f6989c944abbaff54a7389ed, type: 3}
 --- !u!1 &1966245240607949223
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +221,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8357551147920928464}
+  - component: {fileID: 774551574029089215}
+  - component: {fileID: 2847765134166948834}
   m_Layer: 0
   m_Name: Reinforced_door_High
   m_TagString: Untagged
@@ -195,6 +247,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &774551574029089215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966245240607949223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694c47ac088e3cc4e8b0d8411a7d79d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDoorLocked: 0
+  doors:
+  - {fileID: 1370847718846515005}
+  - {fileID: 6358386057561312251}
+--- !u!65 &2847765134166948834
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966245240607949223}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1330574, y: 0.09558961, z: 0.08614727}
+  m_Center: {x: -0.0077827536, y: 0.0022400063, z: 0.001073999}
 --- !u!1 &4835641350019865628
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +287,8 @@ GameObject:
   - component: {fileID: 4231989010622610897}
   - component: {fileID: 3924731851602090174}
   - component: {fileID: 7290702766089178654}
+  - component: {fileID: 666447158950269009}
+  - component: {fileID: 6358386057561312251}
   m_Layer: 0
   m_Name: Sliding_Door_2_High
   m_TagString: Untagged
@@ -254,7 +337,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 3427dc64f6989c944abbaff54a7389ed, type: 3}
+  - {fileID: 2100000, guid: 3f383ac1eaead4c4382fa96129e40102, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -276,3 +359,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &666447158950269009
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835641350019865628}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7830746011886461265, guid: 3427dc64f6989c944abbaff54a7389ed, type: 3}
+--- !u!114 &6358386057561312251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835641350019865628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c2e7ece5e062a409bc239f9359fada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsOpen: 0
+  IsRotatingDoor: 0
+  Speed: 1
+  RotationAmount: 90
+  ForwardDirection: 0
+  SlideDirection: {x: 0, y: 0, z: -0.2}
+  SlideAmount: 15
