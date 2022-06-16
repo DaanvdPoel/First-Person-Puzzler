@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45631832, g: 0.27737734, b: 0.37012285, a: 1}
+  m_IndirectSpecularColor: {r: 0.45682877, g: 0.27923998, b: 0.37102896, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1852,6 +1852,10 @@ PrefabInstance:
     - target: {fileID: 7923181660986424356, guid: c6d9fe543cfc1b048be1c0a25cf1ca4b, type: 3}
       propertyPath: m_Name
       value: PowerSwitchThree
+      objectReference: {fileID: 0}
+    - target: {fileID: 7923181660986424356, guid: c6d9fe543cfc1b048be1c0a25cf1ca4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7923181660986424359, guid: c6d9fe543cfc1b048be1c0a25cf1ca4b, type: 3}
       propertyPath: m_Size.x
@@ -12193,17 +12197,25 @@ PrefabInstance:
       value: Terminal
       objectReference: {fileID: 0}
     - target: {fileID: 6295653552297311233, guid: 4266f102b03884241be02728574c5622, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f89832545b744334eb56b95c473b59e2, type: 2}
+    - target: {fileID: 6295653552297311233, guid: 4266f102b03884241be02728574c5622, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 9b50390c76bfb7647ae9b80186c87536, type: 2}
+      objectReference: {fileID: 2100000, guid: 89cde803c2c4bef4ebb91811094b1222, type: 2}
     - target: {fileID: 6295653552297311233, guid: 4266f102b03884241be02728574c5622, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: b2535c577e6355640a7f90aae70c9532, type: 2}
+      objectReference: {fileID: 2100000, guid: 6a43ad482126a254f8fb90c3b4053a3e, type: 2}
     - target: {fileID: 6295653552297311233, guid: 4266f102b03884241be02728574c5622, type: 3}
       propertyPath: m_Materials.Array.data[4]
       value: 
-      objectReference: {fileID: 2100000, guid: 9b50390c76bfb7647ae9b80186c87536, type: 2}
+      objectReference: {fileID: 2100000, guid: 89cde803c2c4bef4ebb91811094b1222, type: 2}
+    - target: {fileID: 6295653552297311233, guid: 4266f102b03884241be02728574c5622, type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6a43ad482126a254f8fb90c3b4053a3e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4266f102b03884241be02728574c5622, type: 3}
 --- !u!4 &714656128 stripped
@@ -20004,6 +20016,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reinforced_door_High (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2400732341422656980, guid: c5497743cc248a842b9297e9382c87fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ca365427f052ff4ebc7a5f0b6ed93e1, type: 2}
+    - target: {fileID: 4160574768683549774, guid: c5497743cc248a842b9297e9382c87fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ca365427f052ff4ebc7a5f0b6ed93e1, type: 2}
+    - target: {fileID: 7290702766089178654, guid: c5497743cc248a842b9297e9382c87fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ca365427f052ff4ebc7a5f0b6ed93e1, type: 2}
     - target: {fileID: 8357551147920928464, guid: c5497743cc248a842b9297e9382c87fd, type: 3}
       propertyPath: m_RootOrder
       value: 10
