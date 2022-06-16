@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Oxygen : MonoBehaviour
 {
     [SerializeField] GameObject OxygenHelmet;
     [SerializeField] GameObject InteractionText;
     [SerializeField] GameObject YouAreDeadText;
+    [SerializeField] GameObject TryAgainText;
     [SerializeField] TextMeshProUGUI OxygenText;
+    [SerializeField] CharacterController PlayerController;
 
     [SerializeField] private bool oxygenLevel;
     [SerializeField] private float oxygenLoweringTimer = 1;
@@ -18,6 +21,7 @@ public class Oxygen : MonoBehaviour
     {
         InteractionText.SetActive(false);
         YouAreDeadText.SetActive(false);
+        TryAgainText.SetActive(false);
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -41,7 +45,13 @@ public class Oxygen : MonoBehaviour
         if(oxygenAmmount <= 0)
         {
             YouAreDeadText.SetActive(true);
-            gameObject.SetActive(false);
+            PlayerController.enabled = false;
+            StartCoroutine(RetryGame());
+
+            if(TryAgainText == true && Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene(0);
+            }
         }
     }
 
@@ -62,5 +72,11 @@ public class Oxygen : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         InteractionText.SetActive(false);
+    }
+
+    IEnumerator RetryGame()
+    {
+        yield return new WaitForSeconds(3f);
+        TryAgainText.SetActive(true);
     }
 }
