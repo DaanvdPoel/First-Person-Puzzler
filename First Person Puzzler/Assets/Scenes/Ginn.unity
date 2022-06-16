@@ -373,7 +373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &337327646
 Transform:
   m_ObjectHideFlags: 0
@@ -687,6 +687,7 @@ MonoBehaviour:
   OxygenHelmet: {fileID: 387027283}
   InteractionText: {fileID: 781305455}
   YouAreDeadText: {fileID: 0}
+  OxygenText: {fileID: 0}
   oxygenLevel: 0
   oxygenLoweringTimer: 1
   oxygenAmmount: 100
@@ -795,9 +796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d680aa8cdf316446bafd0e9987a864c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_behaviour: 0
-  m_target: {fileID: 0}
-  m_wayPoints: []
 --- !u!114 &663008586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,11 +808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aebf7008dca0d054d91eea4b4dd5b768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_label: 
-  m_settings: {fileID: 11400000, guid: 3cc9b32c37c5f5c4a9d51549b46d6cad, type: 2}
-  m_position: {x: 0, y: 0, z: 0}
-  m_velocity: {x: 0, y: 0, z: 0}
-  m_steering: {x: 0, y: 0, z: 0}
 --- !u!114 &663008587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,6 +824,15 @@ MonoBehaviour:
   powerCellOne: 0
   powerCellTwo: 0
   powerCellThree: 0
+  powerDoorsOne: {fileID: 0}
+  powerDoorsTwo: {fileID: 0}
+  powerDoorsThree: {fileID: 0}
+  powerLightingCellOneEnabled: {fileID: 0}
+  powerLightingCellTwoEnabled: {fileID: 0}
+  powerLightingCellThreeEnabled: {fileID: 0}
+  powerLightingCellOneDisabled: {fileID: 0}
+  powerLightingCellTwoDisabled: {fileID: 0}
+  powerLightingCellThreeDisabled: {fileID: 0}
 --- !u!95 &663008588
 Animator:
   serializedVersion: 3
@@ -1484,7 +1486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1194704244
 Transform:
   m_ObjectHideFlags: 0
@@ -1737,7 +1739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1251735388
 Transform:
   m_ObjectHideFlags: 0
@@ -2036,7 +2038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1478795337
 Transform:
   m_ObjectHideFlags: 0
@@ -2802,6 +2804,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8277706987368212355, guid: 8836a44550cd07442a566890e796ad5a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8277706987368212356, guid: 8836a44550cd07442a566890e796ad5a, type: 3}
       propertyPath: past
       value: 
@@ -2810,6 +2816,10 @@ PrefabInstance:
       propertyPath: present
       value: 
       objectReference: {fileID: 703151257}
+    - target: {fileID: 8277706987763321477, guid: 8836a44550cd07442a566890e796ad5a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8836a44550cd07442a566890e796ad5a, type: 3}
 --- !u!224 &8277706987470785771 stripped
