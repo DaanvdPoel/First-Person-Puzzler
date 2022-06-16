@@ -23,12 +23,7 @@ public class TypingPuzzle : MonoBehaviour
             CheckInput();
         }
 
-        if (interactText.active == true && Input.GetKeyDown(KeyCode.E) && puzzleComplete == false)
-        {
-            GameManager.instance.isTyping = true;
-            puzzleUI.active = true;
-            interactText.active = false;
-        }
+        
 
         if(puzzleUI.active && Input.GetKeyDown(KeyCode.Escape))
         {
@@ -58,6 +53,16 @@ public class TypingPuzzle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             CheckCorrectPassword();
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (interactText.active == true && Input.GetKeyDown(KeyCode.E) && puzzleComplete == false && other.gameObject.CompareTag("Player"))
+        {
+            GameManager.instance.isTyping = true;
+            puzzleUI.active = true;
+            interactText.active = false;
         }
     }
 

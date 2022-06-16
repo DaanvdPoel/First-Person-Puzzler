@@ -8,15 +8,15 @@ public class PowerManagement : MonoBehaviour
     [SerializeField] private bool powerCellOne;
     [SerializeField] private bool powerCellTwo;
     [SerializeField] private bool powerCellThree;
-
-    [SerializeField] private GameObject powerDoorsOne;
-    [SerializeField] private GameObject powerDoorsTwo;
-    [SerializeField] private GameObject powerDoorsThree;
-
+    [Space]
+    [SerializeField] private DoorTrigger powerDoorsOne;
+    [SerializeField] private DoorTrigger powerDoorsTwo;
+    [SerializeField] private DoorTrigger powerDoorsThree;
+    [Space]
     [SerializeField] private GameObject powerLightingCellOneEnabled;
     [SerializeField] private GameObject powerLightingCellTwoEnabled;
     [SerializeField] private GameObject powerLightingCellThreeEnabled;
-
+    [Space]
     [SerializeField] private GameObject powerLightingCellOneDisabled;
     [SerializeField] private GameObject powerLightingCellTwoDisabled;
     [SerializeField] private GameObject powerLightingCellThreeDisabled;
@@ -61,9 +61,9 @@ public class PowerManagement : MonoBehaviour
                 powerCellTwo = false;
                 powerCellThree = false;
 
-                powerDoorsOne.SetActive(false);
-                powerDoorsTwo.SetActive(true);
-                powerDoorsThree.SetActive(true);
+                powerDoorsOne.isDoorLocked = false;
+                powerDoorsTwo.isDoorLocked = true;
+                powerDoorsThree.isDoorLocked = true;
 
                 powerLightingCellOneEnabled.SetActive(true);
                 powerLightingCellOneDisabled.SetActive(false);
@@ -78,9 +78,9 @@ public class PowerManagement : MonoBehaviour
                 powerCellTwo = true;
                 powerCellThree = false;
 
-                powerDoorsOne.SetActive(true);
-                powerDoorsTwo.SetActive(false);
-                powerDoorsThree.SetActive(true);
+                powerDoorsOne.isDoorLocked = true;
+                powerDoorsOne.isDoorLocked = false;
+                powerDoorsOne.isDoorLocked = true;
 
                 powerLightingCellOneEnabled.SetActive(false);
                 powerLightingCellOneDisabled.SetActive(true);
@@ -95,9 +95,9 @@ public class PowerManagement : MonoBehaviour
                 powerCellTwo = false;
                 powerCellThree = true;
 
-                powerDoorsOne.SetActive(true);
-                powerDoorsTwo.SetActive(true);
-                powerDoorsThree.SetActive(false);
+                powerDoorsOne.isDoorLocked = true;
+                powerDoorsOne.isDoorLocked = true;
+                powerDoorsOne.isDoorLocked = false;
 
                 powerLightingCellOneEnabled.SetActive(false);
                 powerLightingCellOneDisabled.SetActive(true);
