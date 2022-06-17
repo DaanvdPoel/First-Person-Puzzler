@@ -17,7 +17,7 @@ public class TimeswitchCameraEffects : MonoBehaviour
         cam = GetComponent<Camera>();
     }
     
-    /*
+    
     
     public bool test;
     public GameObject past,present;
@@ -33,7 +33,7 @@ public class TimeswitchCameraEffects : MonoBehaviour
             present.SetActive(!tog);
         }
     }
-    */
+    
     
     // Update is called once per frame
     public void PerformAnimation()
