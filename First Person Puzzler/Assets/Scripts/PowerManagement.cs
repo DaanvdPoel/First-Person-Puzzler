@@ -84,8 +84,8 @@ public class PowerManagement : MonoBehaviour
             powerCellThree = false;
 
             powerDoorsOne.isDoorLocked = true;
-            powerDoorsOne.isDoorLocked = false;
-            powerDoorsOne.isDoorLocked = true;
+            powerDoorsTwo.isDoorLocked = false;
+            powerDoorsThree.isDoorLocked = true;
 
             powerLightingCellOneEnabled.SetActive(false);
             powerLightingCellOneDisabled.SetActive(true);
