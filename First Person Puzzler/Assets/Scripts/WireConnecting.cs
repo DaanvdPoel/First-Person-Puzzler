@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WireConnecting : MonoBehaviour
 {
-    [SerializeField] private GameObject WirePanel;
+    public GameObject WirePanel;
 
-    [SerializeField]private bool blueWire;
+    [SerializeField] private bool blueWire;
     [SerializeField] private bool redWire;
     [SerializeField] private bool yellowWire;
     [SerializeField] private bool greenWire;
@@ -16,12 +16,16 @@ public class WireConnecting : MonoBehaviour
     [SerializeField] private bool yellowWirePressed;
     [SerializeField] private bool greenWirePressed;
 
-    [SerializeField] private bool allWiresEnabled;
+    public bool allWiresEnabled;
 
+    private void Start()
+    {
+        WirePanel.SetActive(false);
+    }
 
     private void Update()
     {
-        if(WirePanel == true)
+        if(WirePanel.active == true)
         {
             GameManager.instance.isTyping = true;
             Cursor.lockState = CursorLockMode.None;
