@@ -18,14 +18,9 @@ public class Timer : MonoBehaviour
     {
         if(timeRemaining <= 0)
         {
-            GameOver();
+            GameManager.instance.PlayerDied();
         }
-        timerUI.text = "Time: " + timeRemaining.ToString("0.0");
+        timerUI.text = "Time Remaining: " + timeRemaining.ToString("0.0");
         timeRemaining = timeRemaining - Time.deltaTime;
-    }
-
-    private void GameOver()
-    {
-        
     }
 }

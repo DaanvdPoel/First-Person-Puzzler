@@ -27,14 +27,14 @@ public class WireConnecting : MonoBehaviour
     {
         if(WirePanel.active == true)
         {
-            GameManager.instance.isTyping = true;
+            GameManager.instance.playerCantMove = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
 
         if(blueWire == true && redWire == true && yellowWire == true && greenWire == true)
         {
-            GameManager.instance.isTyping = false;
+            GameManager.instance.playerCantMove = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             allWiresEnabled = true;

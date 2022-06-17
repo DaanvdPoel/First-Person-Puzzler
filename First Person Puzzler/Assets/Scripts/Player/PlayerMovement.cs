@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.instance.isTyping == false)
+        if (GameManager.instance.playerCantMove == false)
         {
             IsGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundmask);
 

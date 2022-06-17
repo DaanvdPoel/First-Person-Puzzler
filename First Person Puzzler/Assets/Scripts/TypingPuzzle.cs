@@ -18,9 +18,10 @@ public class TypingPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.isTyping == true)
+        if (GameManager.instance.playerCantMove == true)
         {
             CheckInput();
+            UpdateUI();
         }
 
         
@@ -30,7 +31,6 @@ public class TypingPuzzle : MonoBehaviour
             ExitPuzzle();
         }
 
-        UpdateUI();
     }
 
     void UpdateUI()
@@ -60,7 +60,7 @@ public class TypingPuzzle : MonoBehaviour
     {
         if (interactText.active == true && Input.GetKeyDown(KeyCode.E) && puzzleComplete == false && other.gameObject.CompareTag("Player"))
         {
-            GameManager.instance.isTyping = true;
+            GameManager.instance.playerCantMove = true;
             puzzleUI.active = true;
             interactText.active = false;
         }
@@ -90,7 +90,7 @@ public class TypingPuzzle : MonoBehaviour
     public void ExitPuzzle()
     {
         puzzleUI.active = false;
-        GameManager.instance.isTyping = false;
+        GameManager.instance.playerCantMove = false;
         interactText.active = true;
         currentTypedWord = "";
     }
@@ -102,7 +102,7 @@ public class TypingPuzzle : MonoBehaviour
             Debug.Log("thats Correct Password!!");
             interactText.active = false;
             puzzleUI.active = false;
-            GameManager.instance.isTyping = false;
+            GameManager.instance.playerCantMove = false;
             Activate();
         }
         else
