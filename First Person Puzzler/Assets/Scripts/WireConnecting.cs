@@ -4,37 +4,54 @@ using UnityEngine;
 
 public class WireConnecting : MonoBehaviour
 {
-    public GameObject WirePanel;
-
+    public GameObject WirePanelPresent;
+    public GameObject WirePanelPast;
+    [Space]
     [SerializeField] private bool blueWire;
     [SerializeField] private bool redWire;
     [SerializeField] private bool yellowWire;
     [SerializeField] private bool greenWire;
-
+    [Space]
     [SerializeField] private bool blueWirePressed;
     [SerializeField] private bool redWirePressed;
     [SerializeField] private bool yellowWirePressed;
     [SerializeField] private bool greenWirePressed;
-
+    [Space]
     [SerializeField] private bool puzzleComplete = false;
-
-
-
-
+    [Space]
+    [SerializeField] private GameObject correctBlueWire;
+    [SerializeField] private GameObject incorrectBlueWire;
+    [SerializeField] private GameObject correctRedWire;
+    [SerializeField] private GameObject incorrectRedWire;
+    [SerializeField] private GameObject correctYellowWire;
+    [SerializeField] private GameObject incorrectYellowWire;
+    [SerializeField] private GameObject correctGreenWire;
+    [SerializeField] private GameObject incorrectGreenWire;
+    [Space]
     public bool allWiresEnabled;
+
 
     private void Start()
     {
-        WirePanel.SetActive(false);
+        WirePanelPresent.SetActive(false);
+        WirePanelPast.SetActive(false);
     }
 
     private void Update()
     {
-        if(WirePanel.active == true)
+        if(WirePanelPast.active == true || WirePanelPresent.active == true)
         {
             GameManager.instance.playerCantMove = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                GameManager.instance.playerCantMove = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                WirePanelPast.SetActive(false);
+                WirePanelPresent.SetActive(false);
+            }
         }
 
         if(blueWire == true && redWire == true && yellowWire == true && greenWire == true && puzzleComplete == false)
@@ -44,7 +61,7 @@ public class WireConnecting : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             allWiresEnabled = true;
-            WirePanel.SetActive(false);
+            WirePanelPast.SetActive(false);
         }
     }
     public void EnableBlueWire()
@@ -81,10 +98,13 @@ public class WireConnecting : MonoBehaviour
         if(blueWirePressed == true)
         {
             blueWire = true;
+            correctBlueWire.SetActive(true);
+            incorrectBlueWire.SetActive(false);
         }
         else
         {
             blueWirePressed = false;
+            incorrectBlueWire.SetActive(true);
         }
     }
 
@@ -93,10 +113,13 @@ public class WireConnecting : MonoBehaviour
         if(greenWirePressed == true)
         {
             greenWire = true;
+            correctGreenWire.SetActive(true);
+            incorrectGreenWire.SetActive(false);
         }
         else
         {
             greenWirePressed = false;
+            incorrectGreenWire.SetActive(true);
         }
     }
 
@@ -105,10 +128,13 @@ public class WireConnecting : MonoBehaviour
         if(redWirePressed == true)
         {
             redWire = true;
+            correctRedWire.SetActive(true);
+            incorrectRedWire.SetActive(false);
         }
         else
         {
             redWirePressed = false;
+            incorrectRedWire.SetActive(true);
         }
     }
 
@@ -116,11 +142,14 @@ public class WireConnecting : MonoBehaviour
     {
         if(yellowWirePressed == true)
         {
-            yellowWire = true; 
+            yellowWire = true;
+            correctYellowWire.SetActive(true);
+            incorrectYellowWire.SetActive(false);
         }
         else
         {
             yellowWirePressed = false;
+            incorrectYellowWire.SetActive(true);
         }
     }
 }
