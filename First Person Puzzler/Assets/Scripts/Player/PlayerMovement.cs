@@ -15,6 +15,10 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool IsGrounded;
+    private Vector3 lastPosition = new Vector3 (0, 0, 0);
+
+    public AudioClip walkingSFX;
+    public AudioSource CharacterSFX;
 
     void Update()
     {
@@ -37,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
             velocity.y += gravity * Time.deltaTime;
 
             controller.Move(velocity * Time.deltaTime);
+
+            if(lastPosition != gameObject.transform.position)
+            {
+                CharacterSFX.playOnAwake(walkingSFX);
+            }
         }
     }
 }

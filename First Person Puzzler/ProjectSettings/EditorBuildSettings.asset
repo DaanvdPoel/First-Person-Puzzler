@@ -5,16 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Ginn.unity
-    guid: 74cc9fff37526294bb45148c2c713573
-  - enabled: 0
-    path: Assets/Scenes/Dave/Dave.unity
-    guid: 7cc146ccda614694f89b9e7c23472f88
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: d42612653835d5344b78a50a4934a909
   - enabled: 1
-    path: Assets/Scenes/Dave/Dave 1.unity
-    guid: 25d4ffb69cd5ea94489c175bba6f4e27
+    path: Assets/Scenes/MainGame.unity
+    guid: 89ba882635195a14d84897af129b3d9a
   m_configObjects: {}
