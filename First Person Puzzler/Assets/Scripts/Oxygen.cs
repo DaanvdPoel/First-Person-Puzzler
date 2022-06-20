@@ -15,35 +15,43 @@ public class Oxygen : MonoBehaviour
     [SerializeField] private float oxygenLoweringTimer;
     [SerializeField] private int oxygenAmmount = 100;
 
+    public TimeSwitch timeSwitching;
+
     // Update is called once per frame
     void FixedUpdate()
     {
         OxygenText.text = "Oxygen level: " + oxygenAmmount;
 
-        if (oxygenLevel == false)
+        if(timeSwitching.presentActive == true)
         {
-            oxygenLoweringTimer = oxygenLoweringTimer -= Time.deltaTime;
-            if (oxygenLoweringTimer <= 0)
+            oxygenLevel = false;
+            if (oxygenLevel == false)
             {
-                oxygenAmmount = oxygenAmmount - 10;
-                oxygenLoweringTimer = 2;
+                oxygenLoweringTimer = oxygenLoweringTimer -= Time.deltaTime;
+                if (oxygenLoweringTimer <= 0)
+                {
+                    oxygenAmmount = oxygenAmmount - 1;
+                    oxygenLoweringTimer = 1;
+                }
+            }
+
+            if (oxygenAmmount <= 0)
+            {
+                GameManager.instance.PlayerDied();
+
+                PlayerController.enabled = false;
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    SceneManager.LoadScene(0);
+                }
             }
         }
-        if(oxygenLevel == true)
+        if(timeSwitching.pastActive == true)
         {
-            oxygenAmmount = 100;
+            oxygenLevel = true;
         }
 
-        if(oxygenAmmount <= 0)
-        {
-            GameManager.instance.PlayerDied();
 
-            PlayerController.enabled = false;
-            if(Input.GetKeyDown(KeyCode.Escape))
-            {
-                SceneManager.LoadScene(0);
-            }
-        }
     }
 
     private void OnTriggerStay(Collider other)

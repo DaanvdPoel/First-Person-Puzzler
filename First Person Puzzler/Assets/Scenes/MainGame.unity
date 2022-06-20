@@ -8497,17 +8497,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447278581}
   m_CullTransparentMesh: 1
---- !u!114 &450187148 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 554876644, guid: 3a501d326ae506a44943fb1368c0ee5c, type: 3}
-  m_PrefabInstance: {fileID: 1326240}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 694c47ac088e3cc4e8b0d8411a7d79d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &454151092
 GameObject:
   m_ObjectHideFlags: 0
@@ -27069,6 +27058,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1500211895 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 774551574029089215, guid: c5497743cc248a842b9297e9382c87fd, type: 3}
+  m_PrefabInstance: {fileID: 1935930159}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694c47ac088e3cc4e8b0d8411a7d79d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1502567978
 GameObject:
   m_ObjectHideFlags: 0
@@ -34037,7 +34037,7 @@ PrefabInstance:
     - target: {fileID: 763944283494894783, guid: a1164755aecfbb9438eb75d183e3c9e4, type: 3}
       propertyPath: powerDoorsThree
       value: 
-      objectReference: {fileID: 450187148}
+      objectReference: {fileID: 1500211895}
     - target: {fileID: 763944283494894783, guid: a1164755aecfbb9438eb75d183e3c9e4, type: 3}
       propertyPath: wireConnectingOne
       value: 
@@ -34330,7 +34330,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 774551574029089215, guid: c5497743cc248a842b9297e9382c87fd, type: 3}
       propertyPath: isDoorLocked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1966245240607949223, guid: c5497743cc248a842b9297e9382c87fd, type: 3}
       propertyPath: m_Name
