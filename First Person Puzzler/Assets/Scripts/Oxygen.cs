@@ -12,7 +12,7 @@ public class Oxygen : MonoBehaviour
     [SerializeField] CharacterController PlayerController;
 
     [SerializeField] private bool oxygenLevel;
-    [SerializeField] private float oxygenLoweringTimer = 1;
+    [SerializeField] private float oxygenLoweringTimer;
     [SerializeField] private int oxygenAmmount = 100;
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class Oxygen : MonoBehaviour
             if (oxygenLoweringTimer <= 0)
             {
                 oxygenAmmount = oxygenAmmount - 10;
-                oxygenLoweringTimer = 1;
+                oxygenLoweringTimer = 2;
             }
         }
         if(oxygenLevel == true)

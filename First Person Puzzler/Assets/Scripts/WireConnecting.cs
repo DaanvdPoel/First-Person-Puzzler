@@ -16,6 +16,11 @@ public class WireConnecting : MonoBehaviour
     [SerializeField] private bool yellowWirePressed;
     [SerializeField] private bool greenWirePressed;
 
+    [SerializeField] private bool puzzleComplete = false;
+
+
+
+
     public bool allWiresEnabled;
 
     private void Start()
@@ -32,8 +37,9 @@ public class WireConnecting : MonoBehaviour
             Cursor.visible = true;
         }
 
-        if(blueWire == true && redWire == true && yellowWire == true && greenWire == true)
+        if(blueWire == true && redWire == true && yellowWire == true && greenWire == true && puzzleComplete == false)
         {
+            puzzleComplete = true;
             GameManager.instance.playerCantMove = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
