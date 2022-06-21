@@ -21,17 +21,21 @@ public class PowerManagement : MonoBehaviour
     [SerializeField] private GameObject powerLightingCellTwoDisabled;
     [SerializeField] private GameObject powerLightingCellThreeDisabled;
 
-    [SerializeField] private GameObject wireSwitchOne;
-    [SerializeField] private GameObject wireSwitchTwo;
+    [SerializeField] private GameObject wireSwitchOnePresent;
+    [SerializeField] private GameObject wireSwitchTwoPresent;
+    [SerializeField] private GameObject wireSwitchOnePast;
+    [SerializeField] private GameObject wireSwitchTwoPast;
 
     private PowerOnAnimated powerAnimated;
     public WireConnecting wireConnectingOne;
     public WireConnecting wireConnectingTwo;
+    public TimeSwitch timeSwitching;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        wireSwitchOne.SetActive(false);
+        wireSwitchOnePast.SetActive(false);
 
 
         powerEnabled = false;
@@ -74,7 +78,7 @@ public class PowerManagement : MonoBehaviour
             powerLightingCellThreeEnabled.SetActive(false);
             powerLightingCellThreeDisabled.SetActive(true);
 
-            wireConnectingOne.WirePanel.SetActive(false);
+            wireConnectingOne.WirePanelPresent.SetActive(false);
         }
 
         if(wireConnectingTwo.allWiresEnabled == true)
@@ -84,8 +88,8 @@ public class PowerManagement : MonoBehaviour
             powerCellThree = false;
 
             powerDoorsOne.isDoorLocked = true;
-            powerDoorsOne.isDoorLocked = false;
-            powerDoorsOne.isDoorLocked = true;
+            powerDoorsTwo.isDoorLocked = false;
+            powerDoorsThree.isDoorLocked = true;
 
             powerLightingCellOneEnabled.SetActive(false);
             powerLightingCellOneDisabled.SetActive(true);
@@ -94,7 +98,7 @@ public class PowerManagement : MonoBehaviour
             powerLightingCellThreeEnabled.SetActive(false);
             powerLightingCellThreeDisabled.SetActive(true);
 
-            wireConnectingTwo.WirePanel.SetActive(false);
+            wireConnectingTwo.WirePanelPresent.SetActive(false);
         }
     }
 
@@ -105,11 +109,26 @@ public class PowerManagement : MonoBehaviour
         {
             if(other.gameObject.CompareTag("PowerOne"))
             {
-                wireSwitchOne.SetActive(true);
+                if(timeSwitching.pastActive == true)
+                {
+                    wireSwitchOnePast.SetActive(true);
+                }
+                if(timeSwitching.presentActive == true)
+                {
+                    wireSwitchOnePresent.SetActive(true);
+                }
+
             }
             if(other.gameObject.CompareTag("PowerTwo"))
             {
-                wireSwitchTwo.SetActive(true);
+                if(timeSwitching.pastActive == true)
+                {
+                    wireSwitchTwoPast.SetActive(true);
+                }
+                if(timeSwitching.presentActive == true)
+                {
+                    wireSwitchTwoPresent.SetActive(true);
+                }
             }
             if(other.gameObject.CompareTag("PowerThree"))
             {

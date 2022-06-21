@@ -10,7 +10,7 @@ public class OutOfBounds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 resetPosition = new Vector3(1.7f, 2.8f, 16.9f);
+     
     }
 
     // Update is called once per frame
@@ -21,6 +21,6 @@ public class OutOfBounds : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

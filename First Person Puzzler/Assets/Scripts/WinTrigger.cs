@@ -5,7 +5,8 @@ using UnityEngine;
 public class WinTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject interactText;
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] private CharacterController characterController;
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
@@ -13,6 +14,7 @@ public class WinTrigger : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 GameManager.instance.PlayerWon();
+                characterController.enabled = false;
             }
         }
     }
