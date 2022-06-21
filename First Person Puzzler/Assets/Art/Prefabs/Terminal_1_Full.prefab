@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 1436391146325684091}
   - component: {fileID: 1983552113594746137}
   - component: {fileID: 4728722335898793713}
+  - component: {fileID: 7913233824798128072}
   m_Layer: 0
   m_Name: Terminal_1_Desk
   m_TagString: Untagged
@@ -203,6 +204,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7913233824798128072
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574809181422891513}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1984248938998893172, guid: b5648027c84443b4aa7b2c4d339f8514, type: 3}
 --- !u!1 &6696660797370486728
 GameObject:
   m_ObjectHideFlags: 0

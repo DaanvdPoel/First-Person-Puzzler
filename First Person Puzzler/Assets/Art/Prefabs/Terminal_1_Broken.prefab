@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2973895191831719372}
   - component: {fileID: 2724729644314919566}
   - component: {fileID: 3538572796490330173}
+  - component: {fileID: 8522143321704170520}
   m_Layer: 0
   m_Name: Terminal_1_Broken_Desk
   m_TagString: Untagged
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8522143321704170520
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931211759022825168}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 680742101773574123, guid: b5648027c84443b4aa7b2c4d339f8514, type: 3}
 --- !u!1 &2377081440276792440
 GameObject:
   m_ObjectHideFlags: 0
