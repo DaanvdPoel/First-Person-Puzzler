@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
             if(lastPosition != gameObject.transform.position)
             {
-                CharacterSFX.playOnAwake(walkingSFX);
+               CharacterSFX.playOnAwake(walkingSFX);
             }
         }
     }
