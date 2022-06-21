@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6828838819400265251}
   - component: {fileID: 9091442774067675755}
   - component: {fileID: 7956858871616947600}
+  - component: {fileID: 4290202859762107191}
   m_Layer: 0
   m_Name: CafeTable_Messy_Seat1
   m_TagString: Untagged
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4290202859762107191
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747855022375608115}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3252060708812725012, guid: 2a6cec96236689240a02e17115d0f37c, type: 3}
 --- !u!1 &1192353801798637614
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +318,7 @@ GameObject:
   - component: {fileID: 4769602265363682672}
   - component: {fileID: 4000072153705490814}
   - component: {fileID: 4999900028663876880}
+  - component: {fileID: 2274005952358512541}
   m_Layer: 0
   m_Name: CafeTable_Messy_Seat4
   m_TagString: Untagged
@@ -373,6 +389,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2274005952358512541
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3055332918860879924}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5639589735862696025, guid: 2a6cec96236689240a02e17115d0f37c, type: 3}
 --- !u!1 &3182410964651555226
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +576,7 @@ GameObject:
   - component: {fileID: 6183503444979902173}
   - component: {fileID: 5127093732875258241}
   - component: {fileID: 2224756535357504761}
+  - component: {fileID: 4531817432042551865}
   m_Layer: 0
   m_Name: CafeTable_Messy_Seat5
   m_TagString: Untagged
@@ -616,6 +647,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4531817432042551865
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3686371240950440274}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4752639870179693530, guid: 2a6cec96236689240a02e17115d0f37c, type: 3}
 --- !u!1 &4127105784775839806
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +672,7 @@ GameObject:
   - component: {fileID: 9181744414249995243}
   - component: {fileID: 4255075351755340878}
   - component: {fileID: 3267189978418525153}
+  - component: {fileID: 391766899087169987}
   m_Layer: 0
   m_Name: CafeTable_Messy_Plate1
   m_TagString: Untagged
@@ -697,6 +743,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &391766899087169987
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4127105784775839806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1418815355023747928, guid: 2a6cec96236689240a02e17115d0f37c, type: 3}
 --- !u!1 &4423708078518081308
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +849,7 @@ GameObject:
   - component: {fileID: 3337519744094562137}
   - component: {fileID: 3662736986676346190}
   - component: {fileID: 1327733688082751759}
+  - component: {fileID: 8616803986446145506}
   m_Layer: 0
   m_Name: CafeTable_Messy_Seat6
   m_TagString: Untagged
@@ -859,6 +920,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8616803986446145506
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4837054820604737691}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3604912964346851983, guid: 2a6cec96236689240a02e17115d0f37c, type: 3}
 --- !u!1 &5069764863006903942
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,6 +945,7 @@ GameObject:
   - component: {fileID: 546862273200678338}
   - component: {fileID: 8267638420897803995}
   - component: {fileID: 2785159301539434477}
+  - component: {fileID: 7442319963611637112}
   m_Layer: 0
   m_Name: CafeTable_Messy_Plate3
   m_TagString: Untagged
@@ -940,6 +1016,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7442319963611637112
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069764863006903942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5171739584393324819, guid: 2a6cec96236689240a02e17115d0f37c, type: 3}
 --- !u!1 &5212255210960732092
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,6 +1041,7 @@ GameObject:
   - component: {fileID: 2719402195946240808}
   - component: {fileID: 8249069855325586356}
   - component: {fileID: 1969378957015579966}
+  - component: {fileID: 8705026306290227743}
   m_Layer: 0
   m_Name: CafeTable_Messy_Table
   m_TagString: Untagged
@@ -1021,6 +1112,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8705026306290227743
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5212255210960732092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2909733831314326374, guid: 2a6cec96236689240a02e17115d0f37c, type: 3}
 --- !u!1 &5709938850153718173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,6 +1218,7 @@ GameObject:
   - component: {fileID: 8482918375410020710}
   - component: {fileID: 8651508241815237228}
   - component: {fileID: 5101850607114533947}
+  - component: {fileID: 9014403242605418130}
   m_Layer: 0
   m_Name: CafeTable_Messy_Seat3
   m_TagString: Untagged
@@ -1183,6 +1289,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9014403242605418130
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6149094565071479018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6873999595241787986, guid: 2a6cec96236689240a02e17115d0f37c, type: 3}
 --- !u!1 &6475299750016986839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,6 +1395,7 @@ GameObject:
   - component: {fileID: 8416454176589731630}
   - component: {fileID: 3472985273900253476}
   - component: {fileID: 7033958060062444510}
+  - component: {fileID: 3278126539244511355}
   m_Layer: 0
   m_Name: CafeTable_Messy_Plate2
   m_TagString: Untagged
@@ -1345,6 +1466,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3278126539244511355
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6485734945636965575}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6083238041379268596, guid: 2a6cec96236689240a02e17115d0f37c, type: 3}
 --- !u!1 &6938215280265741596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,6 +1653,7 @@ GameObject:
   - component: {fileID: 4238540171306805480}
   - component: {fileID: 3669157481780004788}
   - component: {fileID: 1139051179001805020}
+  - component: {fileID: 1937830544779972060}
   m_Layer: 0
   m_Name: CafeTable_Messy_Seat2
   m_TagString: Untagged
@@ -1588,3 +1724,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1937830544779972060
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8338163533566554438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9021415734832967355, guid: 2a6cec96236689240a02e17115d0f37c, type: 3}
