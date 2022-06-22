@@ -15,22 +15,39 @@ public class TimeswitchCameraEffects : MonoBehaviour
     void Start()
     {
         cam = GetComponent<Camera>();
+        if (test)
+        {
+            foreach (GameObject pa in past)
+            {
+                pa.SetActive(tog);
+            }
+            foreach (GameObject pr in present)
+            {
+                pr.SetActive(!tog);
+            }
+        }
     }
     
     
     
     public bool test;
-    public GameObject past,present;
+    public GameObject[] past,present;
     bool tog;
     void Update()
     {
-        if (test)
+        if ((test) && (Input.GetKeyDown(KeyCode.P)))
         {
             PerformAnimation();
-            test = false;
+            //test = false;
             tog = !tog;
-            past.SetActive(tog);
-            present.SetActive(!tog);
+            foreach (GameObject pa in past)
+            {
+                pa.SetActive(tog);
+            }
+            foreach (GameObject pr in present)
+            {
+                pr.SetActive(!tog);
+            }
         }
     }
     
