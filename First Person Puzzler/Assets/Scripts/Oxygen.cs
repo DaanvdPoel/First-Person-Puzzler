@@ -7,19 +7,29 @@ using UnityEngine.SceneManagement;
 public class Oxygen : MonoBehaviour
 {
     [SerializeField] GameObject OxygenHelmet;
+    [SerializeField] GameObject OxygenPast;
+    [SerializeField] GameObject OxygenPresent;
     [SerializeField] GameObject InteractionText;
     [SerializeField] TextMeshProUGUI OxygenText;
     [SerializeField] CharacterController PlayerController;
 
     [SerializeField] private bool oxygenLevel;
+    [SerializeField] private bool oxygenHelmetPickedUp;
     [SerializeField] private float oxygenLoweringTimer;
     [SerializeField] private int oxygenAmmount = 100;
 
     public TimeSwitch timeSwitching;
 
+    private void Start()
+    {
+        OxygenPast.SetActive(false);
+        OxygenPresent.SetActive(false);
+        oxygenHelmetPickedUp = false;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
-    {
+    { 
         OxygenText.text = "Oxygen level: " + oxygenAmmount;
 
         if(timeSwitching.presentActive == true)
@@ -46,12 +56,19 @@ public class Oxygen : MonoBehaviour
                 }
             }
         }
-        if(timeSwitching.pastActive == true)
+
+        if (timeSwitching.pastActive == true && oxygenHelmetPickedUp == true)
         {
+            OxygenPresent.SetActive(false);
+            OxygenPast.SetActive(true);
             oxygenLevel = true;
         }
 
-
+        if(timeSwitching.presentActive == true && oxygenHelmetPickedUp == true)
+        {
+            OxygenPresent.SetActive(true);
+            OxygenPast.SetActive(false);
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -62,6 +79,7 @@ public class Oxygen : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 oxygenLevel = true;
+                oxygenHelmetPickedUp = true;
                 OxygenHelmet.SetActive(false);
                 InteractionText.SetActive(false);
             }

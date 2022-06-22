@@ -10,6 +10,9 @@ public class TypingPuzzle : MonoBehaviour
     [SerializeField] private GameObject puzzleUI;
     [SerializeField] private GameObject interactText;
     [SerializeField] private DoorTrigger door; //if the puzzle is solved this door wil open
+    [SerializeField] private AudioSource typingPuzzleAudioSource;
+    [SerializeField] private AudioClip passwordIncorrect;
+    [SerializeField] private AudioClip passwordCorrect;
 
     [HideInInspector]
     public bool puzzleComplete = false;
@@ -100,6 +103,7 @@ public class TypingPuzzle : MonoBehaviour
         if(currentTypedWord == password)
         {
             Debug.Log("thats Correct Password!!");
+            typingPuzzleAudioSource.PlayOneShot(passwordCorrect);
             interactText.active = false;
             puzzleUI.active = false;
             GameManager.instance.playerCantMove = false;
@@ -108,6 +112,7 @@ public class TypingPuzzle : MonoBehaviour
         else
         {
             Debug.Log("thats Wrong Password!!");
+            typingPuzzleAudioSource.PlayOneShot(passwordIncorrect);
         }
     }
 

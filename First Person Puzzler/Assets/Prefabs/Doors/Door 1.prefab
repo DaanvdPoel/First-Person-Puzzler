@@ -420,7 +420,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694c47ac088e3cc4e8b0d8411a7d79d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDoorLocked: 0
   doors:
   - {fileID: 1595072807}
   - {fileID: 752897224}
-  isDoorLocked: 0
+  doorAudioSource: {fileID: 0}
+  openDoorSFX: {fileID: 0}

@@ -210,6 +210,8 @@ MonoBehaviour:
   isDoorLocked: 0
   doors:
   - {fileID: 198422058563731758}
+  doorAudioSource: {fileID: 0}
+  openDoorSFX: {fileID: 0}
 --- !u!1 &7436716084173772579
 GameObject:
   m_ObjectHideFlags: 0

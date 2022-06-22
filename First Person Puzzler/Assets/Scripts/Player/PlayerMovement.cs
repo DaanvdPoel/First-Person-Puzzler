@@ -15,9 +15,10 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool IsGrounded;
-    private Vector3 lastPosition = new Vector3 (0, 0, 0);
+    [SerializeField] private bool IsMoving = false;
+    [SerializeField] private float stepTimer;
 
-    public AudioClip walkingSFX;
+    public AudioClip movementSFX;
     public AudioSource CharacterSFX;
 
     void Update()
@@ -42,10 +43,24 @@ public class PlayerMovement : MonoBehaviour
 
             controller.Move(velocity * Time.deltaTime);
 
-            if(lastPosition != gameObject.transform.position)
+            if(controller.velocity.x < 0f || controller.velocity.x > 0f || controller.velocity.y < 0f || controller.velocity.y > 0f || controller.velocity.z < 0f || controller.velocity.z > 0f)
             {
-                CharacterSFX.playOnAwake(walkingSFX);
+                if(!IsMoving)
+                {
+                    StartCoroutine("PlaySound", stepTimer);
+                }
             }
         }
+        Debug.Log(controller.velocity.magnitude);
+    }
+
+    IEnumerator PlaySound()
+    {
+        CharacterSFX.Play();
+
+        IsMoving = true;
+        yield return new WaitForSeconds(0.35f);
+        IsMoving = false;
+
     }
 }

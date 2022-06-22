@@ -58,7 +58,7 @@ public class PowerManagement : MonoBehaviour
             }
         }
 
-        if (wireConnectingOne.allWiresEnabled == true)
+        if (wireConnectingOne.allWiresEnabled == true && wireConnectingTwo.allWiresEnabled == false)
         {
             powerDoorsOne.isDoorLocked = false;
 
@@ -81,8 +81,10 @@ public class PowerManagement : MonoBehaviour
             wireConnectingOne.WirePanelPresent.SetActive(false);
         }
 
-        if(wireConnectingTwo.allWiresEnabled == true)
+        if(wireConnectingTwo.allWiresEnabled == true && wireConnectingTwo.allWiresEnabled == true)
         {
+            powerDoorsTwo.isDoorLocked = false;
+
             powerCellOne = false;
             powerCellTwo = true;
             powerCellThree = false;
