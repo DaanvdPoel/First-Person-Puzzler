@@ -27,7 +27,6 @@ public class TypingPuzzle : MonoBehaviour
             UpdateUI();
         }
 
-        
 
         if(puzzleUI.active && Input.GetKeyDown(KeyCode.Escape))
         {

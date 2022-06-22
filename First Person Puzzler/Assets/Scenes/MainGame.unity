@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45682877, g: 0.27923998, b: 0.37102896, a: 1}
+  m_IndirectSpecularColor: {r: 0.45631832, g: 0.27737734, b: 0.37012285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6859,7 +6859,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 8aef8cb1592be2346909f4bd7702271e, type: 3}
+  - {fileID: 2100000, guid: 8ca365427f052ff4ebc7a5f0b6ed93e1, type: 2}
   - {fileID: 2100000, guid: cd7b88be00a4ebf4381803561c61f940, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -22112,6 +22112,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8ca365427f052ff4ebc7a5f0b6ed93e1, type: 2}
+    - target: {fileID: -7569610585864116169, guid: 8aef8cb1592be2346909f4bd7702271e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f8f6b00faa0029346a66dd05fec53284, type: 2}
     - target: {fileID: -7221495471851407862, guid: 8aef8cb1592be2346909f4bd7702271e, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -22204,6 +22208,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8ca365427f052ff4ebc7a5f0b6ed93e1, type: 2}
+    - target: {fileID: 3542992489607882118, guid: 8aef8cb1592be2346909f4bd7702271e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f8f6b00faa0029346a66dd05fec53284, type: 2}
     - target: {fileID: 5524959612255515803, guid: 8aef8cb1592be2346909f4bd7702271e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -22215,7 +22223,7 @@ PrefabInstance:
     - target: {fileID: 6548406031922857925, guid: 8aef8cb1592be2346909f4bd7702271e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ca365427f052ff4ebc7a5f0b6ed93e1, type: 2}
+      objectReference: {fileID: 2100000, guid: f8f6b00faa0029346a66dd05fec53284, type: 2}
     - target: {fileID: 6584152136441169555, guid: 8aef8cb1592be2346909f4bd7702271e, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
