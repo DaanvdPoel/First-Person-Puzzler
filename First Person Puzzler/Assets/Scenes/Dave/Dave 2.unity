@@ -1438,13 +1438,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8902309589338641545, guid: cd74c93bfb908da44a5fab4adadba633, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8902309589338641545, guid: cd74c93bfb908da44a5fab4adadba633, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8902309589338641545, guid: cd74c93bfb908da44a5fab4adadba633, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906443229518189695, guid: cd74c93bfb908da44a5fab4adadba633, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906443229518189695, guid: cd74c93bfb908da44a5fab4adadba633, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 40be90d7304f8f149933731a6a6c6ede, type: 2}
     - target: {fileID: 8935671740034042644, guid: cd74c93bfb908da44a5fab4adadba633, type: 3}
       propertyPath: m_Name
       value: EnvironmentPresent
       objectReference: {fileID: 0}
     - target: {fileID: 8935671740034042644, guid: cd74c93bfb908da44a5fab4adadba633, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8935671740034042645, guid: cd74c93bfb908da44a5fab4adadba633, type: 3}
       propertyPath: m_RootOrder
@@ -1499,45 +1519,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3378218329506079635, guid: 447573691680bae4c8a6e2b61dbbc665, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.964
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378218329506079635, guid: 447573691680bae4c8a6e2b61dbbc665, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378218329506079635, guid: 447573691680bae4c8a6e2b61dbbc665, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.00000086426735
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378218329506079635, guid: 447573691680bae4c8a6e2b61dbbc665, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.70710677
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378218329506079635, guid: 447573691680bae4c8a6e2b61dbbc665, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.000000834465
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378218329506079635, guid: 447573691680bae4c8a6e2b61dbbc665, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378218329506079635, guid: 447573691680bae4c8a6e2b61dbbc665, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378218329506079635, guid: 447573691680bae4c8a6e2b61dbbc665, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4904404923195140984, guid: 447573691680bae4c8a6e2b61dbbc665, type: 3}
       propertyPath: m_Name
       value: EnvironmentPast
       objectReference: {fileID: 0}
     - target: {fileID: 4904404923195140984, guid: 447573691680bae4c8a6e2b61dbbc665, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4904404923195140985, guid: 447573691680bae4c8a6e2b61dbbc665, type: 3}
       propertyPath: m_RootOrder
