@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45682877, g: 0.27923998, b: 0.37102896, a: 1}
+  m_IndirectSpecularColor: {r: 0.45631832, g: 0.27737734, b: 0.37012285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -27749,6 +27749,10 @@ PrefabInstance:
       propertyPath: powerDoorsThree
       value: 
       objectReference: {fileID: 839944577}
+    - target: {fileID: 3017421965950590950, guid: 3f86321c52ddb634bbf70c7267e484af, type: 3}
+      propertyPath: startTime
+      value: 220
+      objectReference: {fileID: 0}
     - target: {fileID: 3017421966370771789, guid: 3f86321c52ddb634bbf70c7267e484af, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -27757,6 +27761,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 544108242}
+    - target: {fileID: 3017421967410724166, guid: 3f86321c52ddb634bbf70c7267e484af, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017421967410724166, guid: 3f86321c52ddb634bbf70c7267e484af, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017421967410724166, guid: 3f86321c52ddb634bbf70c7267e484af, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017421967410724166, guid: 3f86321c52ddb634bbf70c7267e484af, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017421967410724166, guid: 3f86321c52ddb634bbf70c7267e484af, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017421967410724166, guid: 3f86321c52ddb634bbf70c7267e484af, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3017421967631298699, guid: 3f86321c52ddb634bbf70c7267e484af, type: 3}
       propertyPath: past
       value: 
