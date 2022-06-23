@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class FuseboxGraphics : MonoBehaviour
 {
-    public bool debug;
     public GameObject[] wires, fixedwires;
     public Transform lever;
-    public bool bluefixed, redfixed, yellowfixed, greenfixed, leverDown;
+    [Space]
+    public WireConnecting wc;
+    bool leverDown;
 
     // Update is called once per frame
     void Update()
     {
-        if (debug)
-        {
-            UpdateFusebox(bluefixed, redfixed, yellowfixed, greenfixed, leverDown);
-        }
+        
+        UpdateFusebox(wc.blueWire, wc.redWire, wc.yellowWire, wc.greenWire, wc.allWiresEnabled);
         
         float rt = lever.localEulerAngles.x;
         lever.localEulerAngles = new Vector3(Mathf.LerpAngle(rt, (leverDown)?80:-80, Time.deltaTime*8), 0, 0);
