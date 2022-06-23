@@ -8,22 +8,26 @@ public class PasswordPickup : MonoBehaviour
     [SerializeField] private GameObject passwordPickup;
     [SerializeField] private GameObject passwordTextObject;
     [SerializeField] private TextMeshProUGUI passwordText;
+    [SerializeField] private GameObject interactText;
 
     private void Start()
     {
         passwordTextObject.SetActive(false);
+        interactText.SetActive(false);
     }
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject == passwordPickup && Input.GetKey(KeyCode.E))
+        if(other.gameObject.CompareTag("Password") && Input.GetKey(KeyCode.E))
         {
+            interactText.SetActive(true);
             passwordTextObject.SetActive(true);
-            passwordText.text = "the password is: incognition".ToString();
+            passwordText.text = "incognition".ToString();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+        interactText.SetActive(false);
         passwordTextObject.SetActive(false);
     }
 }
