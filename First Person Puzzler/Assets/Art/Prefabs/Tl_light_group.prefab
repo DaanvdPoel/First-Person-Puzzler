@@ -60,6 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 8ca365427f052ff4ebc7a5f0b6ed93e1, type: 2}
   - {fileID: 2100000, guid: 071896fc20ef74d4980e28a3564b8125, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -89,6 +90,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5167380121219228598}
     m_Modifications:
+    - target: {fileID: 596649132288822067, guid: b982aff619829594eb319fb26ffaf482, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 596649132288822067, guid: b982aff619829594eb319fb26ffaf482, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 596649132288822067, guid: b982aff619829594eb319fb26ffaf482, type: 3}
+      propertyPath: m_Color.r
+      value: 0.91764706
+      objectReference: {fileID: 0}
     - target: {fileID: 596649132288822067, guid: b982aff619829594eb319fb26ffaf482, type: 3}
       propertyPath: m_Intensity
       value: 1
