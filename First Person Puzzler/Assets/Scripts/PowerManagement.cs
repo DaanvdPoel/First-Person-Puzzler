@@ -12,21 +12,13 @@ public class PowerManagement : MonoBehaviour
     [SerializeField] private DoorTrigger powerDoorsOne;
     [SerializeField] private DoorTrigger powerDoorsTwo;
     [SerializeField] private DoorTrigger powerDoorsThree;
-    [Space]
-    [SerializeField] private GameObject powerLightingCellOneEnabled;
-    [SerializeField] private GameObject powerLightingCellTwoEnabled;
-    [SerializeField] private GameObject powerLightingCellThreeEnabled;
-    [Space]
-    [SerializeField] private GameObject powerLightingCellOneDisabled;
-    [SerializeField] private GameObject powerLightingCellTwoDisabled;
-    [SerializeField] private GameObject powerLightingCellThreeDisabled;
 
     [SerializeField] private GameObject wireSwitchOnePresent;
     [SerializeField] private GameObject wireSwitchTwoPresent;
     [SerializeField] private GameObject wireSwitchOnePast;
     [SerializeField] private GameObject wireSwitchTwoPast;
+    [SerializeField] private GameObject interactText;
 
-    private PowerOnAnimated powerAnimated;
     public WireConnecting wireConnectingOne;
     public WireConnecting wireConnectingTwo;
     public TimeSwitch timeSwitching;
@@ -35,15 +27,11 @@ public class PowerManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        wireSwitchOnePresent.SetActive(false);
         wireSwitchOnePast.SetActive(false);
-
-
+        wireSwitchTwoPast.SetActive(false);
+        wireSwitchTwoPresent.SetActive(false);
         powerEnabled = false;
-        powerLightingCellOneDisabled.SetActive(true);
-
-        powerLightingCellOneEnabled.SetActive(false);
-
-        powerAnimated = GetComponent<PowerOnAnimated>();
      }
 
     // Update is called once per frame
@@ -58,94 +46,65 @@ public class PowerManagement : MonoBehaviour
             }
         }
 
-        if (wireConnectingOne.allWiresEnabled == true)
+        if (wireConnectingOne.allWiresEnabled == true && wireConnectingTwo.allWiresEnabled == false)
         {
             powerDoorsOne.isDoorLocked = false;
-
             powerEnabled = true;
             powerCellOne = true;
-            powerCellTwo = false;
-            powerCellThree = false;
-
-            powerDoorsOne.isDoorLocked = false;
-            powerDoorsTwo.isDoorLocked = true;
-            powerDoorsThree.isDoorLocked = true;
-
-            powerLightingCellOneEnabled.SetActive(true);
-            powerLightingCellOneDisabled.SetActive(false);
-            powerLightingCellTwoEnabled.SetActive(false);
-            powerLightingCellTwoDisabled.SetActive(true);
-            powerLightingCellThreeEnabled.SetActive(false);
-            powerLightingCellThreeDisabled.SetActive(true);
-
             wireConnectingOne.WirePanelPresent.SetActive(false);
         }
 
-        if(wireConnectingTwo.allWiresEnabled == true)
+        if(wireConnectingTwo.allWiresEnabled == true && wireConnectingTwo.allWiresEnabled == true)
         {
-            powerCellOne = false;
-            powerCellTwo = true;
-            powerCellThree = false;
-
-            powerDoorsOne.isDoorLocked = true;
             powerDoorsTwo.isDoorLocked = false;
-            powerDoorsThree.isDoorLocked = true;
-
-            powerLightingCellOneEnabled.SetActive(false);
-            powerLightingCellOneDisabled.SetActive(true);
-            powerLightingCellTwoEnabled.SetActive(true);
-            powerLightingCellTwoDisabled.SetActive(false);
-            powerLightingCellThreeEnabled.SetActive(false);
-            powerLightingCellThreeDisabled.SetActive(true);
-
+            powerCellTwo = true;
             wireConnectingTwo.WirePanelPresent.SetActive(false);
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("TriggerEntered");
-        if(Input.GetKeyDown(KeyCode.E))
+        if (other.gameObject.CompareTag("PowerOne"))
         {
-            if(other.gameObject.CompareTag("PowerOne"))
+            interactText.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                if(timeSwitching.pastActive == true)
+                interactText.SetActive(false);
+                if (timeSwitching.pastActive == true)
                 {
                     wireSwitchOnePast.SetActive(true);
                 }
-                if(timeSwitching.presentActive == true)
+                if (timeSwitching.presentActive == true)
                 {
                     wireSwitchOnePresent.SetActive(true);
                 }
-
             }
-            if(other.gameObject.CompareTag("PowerTwo"))
+        }
+        if(other.gameObject.CompareTag("PowerTwo"))
+        {
+            interactText.SetActive(true);
+            if(Input.GetKeyDown(KeyCode.E))
             {
-                if(timeSwitching.pastActive == true)
+                interactText.SetActive(false);
+                if (timeSwitching.pastActive == true)
                 {
                     wireSwitchTwoPast.SetActive(true);
                 }
-                if(timeSwitching.presentActive == true)
+                if (timeSwitching.presentActive == true)
                 {
                     wireSwitchTwoPresent.SetActive(true);
                 }
             }
-            if(other.gameObject.CompareTag("PowerThree"))
+        }
+
+        if(other.gameObject.CompareTag("PowerThree"))
+        {
+            interactText.SetActive(true);
+            if(Input.GetKeyDown(KeyCode.E))
             {
-                powerCellOne = false;
-                powerCellTwo = false;
+                interactText.SetActive(false);
                 powerCellThree = true;
-
-                powerDoorsOne.isDoorLocked = true;
-                powerDoorsOne.isDoorLocked = true;
-                powerDoorsOne.isDoorLocked = false;
-
-                powerLightingCellOneEnabled.SetActive(false);
-                powerLightingCellOneDisabled.SetActive(true);
-                powerLightingCellTwoEnabled.SetActive(false);
-                powerLightingCellTwoDisabled.SetActive(true);
-                powerLightingCellThreeEnabled.SetActive(true);
-                powerLightingCellThreeDisabled.SetActive(false);
+                powerDoorsThree.isDoorLocked = false;
             }
         }
     }

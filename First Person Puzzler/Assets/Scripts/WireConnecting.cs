@@ -28,6 +28,10 @@ public class WireConnecting : MonoBehaviour
     [SerializeField] private GameObject correctGreenWire;
     [SerializeField] private GameObject incorrectGreenWire;
     [Space]
+    [SerializeField] private GameObject BluePressed;
+    [SerializeField] private GameObject RedPressed;
+    [SerializeField] private GameObject YellowPressed;
+    [SerializeField] private GameObject GreenPressed;
     public bool allWiresEnabled;
 
 
@@ -70,6 +74,12 @@ public class WireConnecting : MonoBehaviour
         redWirePressed = false;
         greenWirePressed = false;
         yellowWirePressed = false;
+
+        BluePressed.SetActive(true);
+        RedPressed.SetActive(false);
+        YellowPressed.SetActive(false);
+        GreenPressed.SetActive(false);
+
     }
     public void EnableGreenWire()
     {
@@ -77,6 +87,11 @@ public class WireConnecting : MonoBehaviour
         blueWirePressed = false;
         redWirePressed = false;
         yellowWirePressed = false;
+
+        BluePressed.SetActive(false);
+        RedPressed.SetActive(false);
+        YellowPressed.SetActive(false);
+        GreenPressed.SetActive(true);
     }
     public void EnableRedWire()
     {
@@ -85,6 +100,10 @@ public class WireConnecting : MonoBehaviour
         greenWirePressed = false;
         yellowWirePressed = false;
 
+        BluePressed.SetActive(false);
+        RedPressed.SetActive(true);
+        YellowPressed.SetActive(false);
+        GreenPressed.SetActive(false);
     }
     public void EnableYellowWire()
     {
@@ -92,6 +111,11 @@ public class WireConnecting : MonoBehaviour
         blueWirePressed = false;
         greenWirePressed = false;
         redWirePressed = false;
+
+        BluePressed.SetActive(false);
+        RedPressed.SetActive(false);
+        YellowPressed.SetActive(true);
+        GreenPressed.SetActive(false);
     }
     public void CheckBlueWire()
     {

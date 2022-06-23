@@ -410,6 +410,8 @@ MonoBehaviour:
   doors:
   - {fileID: 313861274601607828}
   - {fileID: 7357476576989677934}
+  doorAudioSource: {fileID: 0}
+  openDoorSFX: {fileID: 0}
 --- !u!65 &2466479736078028580
 BoxCollider:
   m_ObjectHideFlags: 0

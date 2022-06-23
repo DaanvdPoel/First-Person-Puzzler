@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     public float startTime;
     public float timeRemaining;
-    public TextMeshProUGUI timerUI;
+    //public TextMeshProUGUI timerUI;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
         {
             GameManager.instance.PlayerDied();
         }
-        timerUI.text = "Time Remaining: " + timeRemaining.ToString("0.0");
+        //timerUI.text = "Time Remaining: " + timeRemaining.ToString("0.0");
         timeRemaining = timeRemaining - Time.deltaTime;
     }
 }

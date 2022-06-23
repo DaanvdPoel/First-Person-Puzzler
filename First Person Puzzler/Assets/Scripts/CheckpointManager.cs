@@ -10,7 +10,7 @@ public class CheckpointManager : MonoBehaviour
 
     [SerializeField] private Transform spawnLocation;
     [SerializeField] private GameObject player;
-    [SerializeField] private Timer timer;
+    //[SerializeField] private Timer timer;
 
     //[0] typingPuzzle || [1] electricityFixing || [2] wireconnectingPuzzle || [3]
      public bool[] puzzlesComplete = new bool[4];
@@ -56,7 +56,7 @@ public class CheckpointManager : MonoBehaviour
         PlayerPrefs.SetFloat("playerPositionY", playerPosition.y);
         PlayerPrefs.SetFloat("playerPositionZ", playerPosition.z);
 
-        PlayerPrefs.SetFloat("timeRemaining", timer.timeRemaining);
+        //PlayerPrefs.SetFloat("timeRemaining", timer.timeRemaining);
 
         Debug.Log("save" + playerPosition);
     }
@@ -72,13 +72,13 @@ public class CheckpointManager : MonoBehaviour
 
         if (newPlayerPosition != new Vector3(0,0,0))
         {
-            timer.timeRemaining = PlayerPrefs.GetFloat("timeRemaining", timer.timeRemaining);
+            //timer.timeRemaining = PlayerPrefs.GetFloat("timeRemaining", timer.timeRemaining);
             player.transform.position = newPlayerPosition;
             playerController.enabled = true;
         }
         else
         {
-            timer.timeRemaining = PlayerPrefs.GetFloat("timeRemaining", timer.timeRemaining);
+            //timer.timeRemaining = PlayerPrefs.GetFloat("timeRemaining", timer.timeRemaining);
             player.transform.position = spawnLocation.position;
             playerController.enabled = true;
         }

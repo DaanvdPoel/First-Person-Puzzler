@@ -10,6 +10,8 @@ TagManager:
   - PowerThree
   - Ground
   - PasswordTerminal
+  - Keycard
+  - EscapePodDoor
   layers:
   - Default
   - TransparentFX

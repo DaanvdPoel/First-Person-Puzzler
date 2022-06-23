@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 763944283494894725}
   - component: {fileID: 763944283494894782}
   - component: {fileID: 763944283494894783}
+  - component: {fileID: 7269407143079369429}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -238,6 +239,10 @@ MonoBehaviour:
   groundmask:
     serializedVersion: 2
     m_Bits: 64
+  IsMoving: 0
+  stepTimer: 0
+  movementSFX: {fileID: 0}
+  CharacterSFX: {fileID: 0}
 --- !u!114 &763944283494894782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,14 +256,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OxygenHelmet: {fileID: 0}
+  OxygenPast: {fileID: 0}
+  OxygenPresent: {fileID: 0}
   InteractionText: {fileID: 0}
-  YouAreDeadText: {fileID: 0}
-  TryAgainText: {fileID: 0}
   OxygenText: {fileID: 0}
   PlayerController: {fileID: 0}
   oxygenLevel: 0
+  oxygenHelmetPickedUp: 0
   oxygenLoweringTimer: 1
   oxygenAmmount: 100
+  timeSwitching: {fileID: 0}
 --- !u!114 &763944283494894783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,12 +285,26 @@ MonoBehaviour:
   powerDoorsOne: {fileID: 0}
   powerDoorsTwo: {fileID: 0}
   powerDoorsThree: {fileID: 0}
-  powerLightingCellOneEnabled: {fileID: 0}
-  powerLightingCellTwoEnabled: {fileID: 0}
-  powerLightingCellThreeEnabled: {fileID: 0}
-  powerLightingCellOneDisabled: {fileID: 0}
-  powerLightingCellTwoDisabled: {fileID: 0}
-  powerLightingCellThreeDisabled: {fileID: 0}
+  wireSwitchOnePresent: {fileID: 0}
+  wireSwitchTwoPresent: {fileID: 0}
+  wireSwitchOnePast: {fileID: 0}
+  wireSwitchTwoPast: {fileID: 0}
+  wireConnectingOne: {fileID: 0}
+  wireConnectingTwo: {fileID: 0}
+  timeSwitching: {fileID: 0}
+--- !u!114 &7269407143079369429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763944283494894726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8559a138ab7aa6c44aea8582dc600fbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WinTrigger: {fileID: 0}
 --- !u!1 &5597961405633694544
 GameObject:
   m_ObjectHideFlags: 0
