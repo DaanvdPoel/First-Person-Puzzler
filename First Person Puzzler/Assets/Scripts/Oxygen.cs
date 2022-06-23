@@ -32,7 +32,7 @@ public class Oxygen : MonoBehaviour
     { 
         OxygenText.text = "Oxygen level: " + oxygenAmmount;
 
-        if(timeSwitching.presentActive == true)
+        if(oxygenHelmetPickedUp == false || timeSwitching.presentActive == true)
         {
             oxygenLevel = false;
             if (oxygenLevel == false)
