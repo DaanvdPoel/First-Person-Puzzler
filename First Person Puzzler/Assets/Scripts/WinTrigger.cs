@@ -10,12 +10,8 @@ public class WinTrigger : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            interactText.active = true;
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                GameManager.instance.PlayerWon();
-                characterController.enabled = false;
-            }
+            GameManager.instance.PlayerWon();
+            characterController.enabled = false;
         }
     }
 }

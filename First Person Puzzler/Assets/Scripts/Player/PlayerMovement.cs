@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
 
     public float speed = 12f;
-    public float gravity = -9.8f;
+    public float gravity = -0.5f;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -51,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-        Debug.Log(controller.velocity.magnitude);
     }
 
     IEnumerator PlaySound()
