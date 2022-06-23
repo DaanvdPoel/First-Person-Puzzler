@@ -17,11 +17,15 @@ public class PasswordPickup : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.CompareTag("Password") && Input.GetKey(KeyCode.E))
+        if (other.gameObject.CompareTag("Password"))
         {
             interactText.SetActive(true);
-            passwordTextObject.SetActive(true);
-            passwordText.text = "incognition".ToString();
+            if (Input.GetKey(KeyCode.E))
+            {
+                passwordTextObject.SetActive(true);
+                passwordText.text = "incognition".ToString();
+                interactText.SetActive(false);
+            }
         }
     }
 
