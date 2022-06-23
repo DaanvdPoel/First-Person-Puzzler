@@ -28383,6 +28383,10 @@ PrefabInstance:
       value: Game
       objectReference: {fileID: 0}
     - target: {fileID: 5521593430678415253, guid: 3f86321c52ddb634bbf70c7267e484af, type: 3}
+      propertyPath: interactText
+      value: 
+      objectReference: {fileID: 682336662}
+    - target: {fileID: 5521593430678415253, guid: 3f86321c52ddb634bbf70c7267e484af, type: 3}
       propertyPath: passwordText
       value: 
       objectReference: {fileID: 1903985231}
