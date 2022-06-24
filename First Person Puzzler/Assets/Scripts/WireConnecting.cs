@@ -7,10 +7,10 @@ public class WireConnecting : MonoBehaviour
     public GameObject WirePanelPresent;
     public GameObject WirePanelPast;
     [Space]
-    [SerializeField] private bool blueWire;
-    [SerializeField] private bool redWire;
-    [SerializeField] private bool yellowWire;
-    [SerializeField] private bool greenWire;
+    public bool blueWire;
+    public bool redWire;
+    public bool yellowWire;
+    public bool greenWire;
     [Space]
     [SerializeField] private bool blueWirePressed;
     [SerializeField] private bool redWirePressed;
