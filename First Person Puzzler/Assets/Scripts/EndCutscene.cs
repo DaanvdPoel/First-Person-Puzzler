@@ -5,18 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class EndCutscene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(0);
-        }
+        StartCoroutine(LoadBackIntoMainMenu());
+    }
+
+    IEnumerator LoadBackIntoMainMenu()
+    {
+        yield return new WaitForSeconds(48f);
+        SceneManager.LoadScene(0);
     }
 }
+
+

@@ -41,7 +41,7 @@ public class Oxygen : MonoBehaviour
                 if (oxygenLoweringTimer <= 0)
                 {
                     oxygenAmmount = oxygenAmmount - 1;
-                    oxygenLoweringTimer = 1;
+                    oxygenLoweringTimer = 0.2f;
                 }
             }
 
@@ -62,6 +62,7 @@ public class Oxygen : MonoBehaviour
             OxygenPresent.SetActive(false);
             OxygenPast.SetActive(true);
             oxygenLevel = true;
+            oxygenAmmount = 100;
         }
 
         if(timeSwitching.presentActive == true && oxygenHelmetPickedUp == true)

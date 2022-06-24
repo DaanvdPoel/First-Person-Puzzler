@@ -20,13 +20,9 @@ public class WireConnecting : MonoBehaviour
     [SerializeField] private bool puzzleComplete = false;
     [Space]
     [SerializeField] private GameObject correctBlueWire;
-    [SerializeField] private GameObject incorrectBlueWire;
     [SerializeField] private GameObject correctRedWire;
-    [SerializeField] private GameObject incorrectRedWire;
     [SerializeField] private GameObject correctYellowWire;
-    [SerializeField] private GameObject incorrectYellowWire;
     [SerializeField] private GameObject correctGreenWire;
-    [SerializeField] private GameObject incorrectGreenWire;
     [Space]
     [SerializeField] private GameObject BluePressed;
     [SerializeField] private GameObject RedPressed;
@@ -123,12 +119,18 @@ public class WireConnecting : MonoBehaviour
         {
             blueWire = true;
             correctBlueWire.SetActive(true);
-            incorrectBlueWire.SetActive(false);
         }
         else
         {
             blueWirePressed = false;
-            incorrectBlueWire.SetActive(true);
+            blueWire = false;
+            redWire = false;
+            greenWire = false;
+            yellowWire = false;
+            correctBlueWire.SetActive(false);
+            correctRedWire.SetActive(false);
+            correctGreenWire.SetActive(false);
+            correctYellowWire.SetActive(false);
         }
     }
 
@@ -138,12 +140,18 @@ public class WireConnecting : MonoBehaviour
         {
             greenWire = true;
             correctGreenWire.SetActive(true);
-            incorrectGreenWire.SetActive(false);
         }
         else
         {
             greenWirePressed = false;
-            incorrectGreenWire.SetActive(true);
+            blueWire = false;
+            redWire = false;
+            greenWire = false;
+            yellowWire = false;
+            correctBlueWire.SetActive(false);
+            correctRedWire.SetActive(false);
+            correctGreenWire.SetActive(false);
+            correctYellowWire.SetActive(false);
         }
     }
 
@@ -153,12 +161,18 @@ public class WireConnecting : MonoBehaviour
         {
             redWire = true;
             correctRedWire.SetActive(true);
-            incorrectRedWire.SetActive(false);
         }
         else
         {
             redWirePressed = false;
-            incorrectRedWire.SetActive(true);
+            blueWire = false;
+            redWire = false;
+            greenWire = false;
+            yellowWire = false;
+            correctBlueWire.SetActive(false);
+            correctRedWire.SetActive(false);
+            correctGreenWire.SetActive(false);
+            correctYellowWire.SetActive(false);
         }
     }
 
@@ -168,12 +182,18 @@ public class WireConnecting : MonoBehaviour
         {
             yellowWire = true;
             correctYellowWire.SetActive(true);
-            incorrectYellowWire.SetActive(false);
         }
         else
         {
             yellowWirePressed = false;
-            incorrectYellowWire.SetActive(true);
+            blueWire = false;
+            redWire = false;
+            greenWire = false;
+            yellowWire = false;
+            correctBlueWire.SetActive(false);
+            correctRedWire.SetActive(false);
+            correctGreenWire.SetActive(false);
+            correctYellowWire.SetActive(false);
         }
     }
 }
