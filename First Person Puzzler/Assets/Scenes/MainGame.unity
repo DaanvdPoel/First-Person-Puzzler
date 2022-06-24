@@ -5241,6 +5241,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 344c520b920b3e143a7dc6e883765f80, type: 3}
     - target: {fileID: 554876644, guid: 3a501d326ae506a44943fb1368c0ee5c, type: 3}
+      propertyPath: isDoorLocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 554876644, guid: 3a501d326ae506a44943fb1368c0ee5c, type: 3}
       propertyPath: doorAudioSource
       value: 
       objectReference: {fileID: 1175757103}
@@ -19087,7 +19091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &4904404924453139623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28256,7 +28260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1001 &8935671740158825227
 PrefabInstance:
   m_ObjectHideFlags: 0
