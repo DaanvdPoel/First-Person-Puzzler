@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject Main;
     [SerializeField] private GameObject CreditsMenu;
+    [SerializeField] private GameObject SettingsMenu;
+    [SerializeField] private GameObject MainMenuButtons;
+    [SerializeField] private AudioMixer audioMixer;
 
     private void Start()
     {
@@ -15,6 +19,15 @@ public class MainMenu : MonoBehaviour
         Main.SetActive(true);
         CreditsMenu.SetActive(false);
     }
+
+    private void Update()
+    {
+        if(SettingsMenu.active == true && Input.GetKeyDown(KeyCode.Escape))
+        {
+            SettingsMenu.SetActive(false);
+            MainMenuButtons.SetActive(true);
+        }
+    }
     public void StartGame()
     {
         SceneManager.LoadScene(1);
@@ -22,7 +35,8 @@ public class MainMenu : MonoBehaviour
 
     public void OpenSettings()
     {
-
+        MainMenuButtons.SetActive(false);
+        SettingsMenu.SetActive(true);
     }
 
     public void OpenCredits()
@@ -40,5 +54,10 @@ public class MainMenu : MonoBehaviour
     {
         Main.SetActive(true);
         CreditsMenu.SetActive(false);
+    }
+
+    public void SetVolume(float volume)
+    {
+        audioMixer.SetFloat("Volume", volume);
     }
 }

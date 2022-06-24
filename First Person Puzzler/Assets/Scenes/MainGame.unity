@@ -503,7 +503,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: fc74ab4a00f9a164b82f0cd0f8cb6a08, type: 2}
   m_audioClip: {fileID: 8300000, guid: 344c520b920b3e143a7dc6e883765f80, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4899,6 +4899,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2525027881131019771, guid: 8aef8cb1592be2346909f4bd7702271e, type: 3}
+--- !u!114 &1020929469 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2962631493749953523, guid: 7eb5756a0f9d36d44be406c3f1fbb419, type: 3}
+  m_PrefabInstance: {fileID: 4728720416245921573}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4343517f861c3104baa220f829b9b237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1025904025
 GameObject:
   m_ObjectHideFlags: 0
@@ -13357,15 +13368,15 @@ PrefabInstance:
     - target: {fileID: 6295653552297311233, guid: 4266f102b03884241be02728574c5622, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: b2535c577e6355640a7f90aae70c9532, type: 2}
+      objectReference: {fileID: 2100000, guid: 722e0257f47e3984dbed2e9d90f95088, type: 2}
     - target: {fileID: 6295653552297311233, guid: 4266f102b03884241be02728574c5622, type: 3}
       propertyPath: m_Materials.Array.data[4]
       value: 
-      objectReference: {fileID: 2100000, guid: b2535c577e6355640a7f90aae70c9532, type: 2}
+      objectReference: {fileID: 2100000, guid: 722e0257f47e3984dbed2e9d90f95088, type: 2}
     - target: {fileID: 6295653552297311233, guid: 4266f102b03884241be02728574c5622, type: 3}
       propertyPath: m_Materials.Array.data[5]
       value: 
-      objectReference: {fileID: 2100000, guid: 9b50390c76bfb7647ae9b80186c87536, type: 2}
+      objectReference: {fileID: 2100000, guid: 722e0257f47e3984dbed2e9d90f95088, type: 2}
     - target: {fileID: 8116520525243707072, guid: 4266f102b03884241be02728574c5622, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -15116,6 +15127,10 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4728720415816189634, guid: 7eb5756a0f9d36d44be406c3f1fbb419, type: 3}
+      propertyPath: tce
+      value: 
+      objectReference: {fileID: 1020929469}
     - target: {fileID: 4728720415816189634, guid: 7eb5756a0f9d36d44be406c3f1fbb419, type: 3}
       propertyPath: past
       value: 
