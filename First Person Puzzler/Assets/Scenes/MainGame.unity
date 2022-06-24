@@ -14622,6 +14622,30 @@ PrefabInstance:
       propertyPath: present
       value: 
       objectReference: {fileID: 8935671740140949409}
+    - target: {fileID: 4728720416002668095, guid: 7eb5756a0f9d36d44be406c3f1fbb419, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2027157727}
+    - target: {fileID: 4728720416002668095, guid: 7eb5756a0f9d36d44be406c3f1fbb419, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitPuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728720416603453791, guid: 7eb5756a0f9d36d44be406c3f1fbb419, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2027157727}
+    - target: {fileID: 4728720416603453791, guid: 7eb5756a0f9d36d44be406c3f1fbb419, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetText
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728720417349346564, guid: 7eb5756a0f9d36d44be406c3f1fbb419, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2027157727}
+    - target: {fileID: 4728720417349346564, guid: 7eb5756a0f9d36d44be406c3f1fbb419, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CheckCorrectPassword
+      objectReference: {fileID: 0}
     - target: {fileID: 5405965991576605964, guid: 7eb5756a0f9d36d44be406c3f1fbb419, type: 3}
       propertyPath: powerDoorsOne
       value: 
