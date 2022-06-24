@@ -18,6 +18,7 @@ public class PowerManagement : MonoBehaviour
     [SerializeField] private GameObject wireSwitchOnePast;
     [SerializeField] private GameObject wireSwitchTwoPast;
     [SerializeField] private GameObject interactText;
+    [SerializeField] private GameObject powerEnabledtextCellThree;
 
     public WireConnecting wireConnectingOne;
     public WireConnecting wireConnectingTwo;
@@ -105,7 +106,17 @@ public class PowerManagement : MonoBehaviour
                 interactText.SetActive(false);
                 powerCellThree = true;
                 powerDoorsThree.isDoorLocked = false;
+                powerEnabledtextCellThree.SetActive(true);
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.CompareTag("PowerThree"))
+        {
+            interactText.SetActive(false);
+            powerEnabledtextCellThree.SetActive(false);
         }
     }
 }

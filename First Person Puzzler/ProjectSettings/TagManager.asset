@@ -12,6 +12,7 @@ TagManager:
   - PasswordTerminal
   - Keycard
   - EscapePodDoor
+  - Password
   layers:
   - Default
   - TransparentFX
