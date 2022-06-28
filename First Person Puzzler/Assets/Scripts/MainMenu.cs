@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject Main;
+    [SerializeField] private GameObject CreditsMenu;
+
+    private void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Main.SetActive(true);
+        CreditsMenu.SetActive(false);
+    }
     public void StartGame()
     {
         SceneManager.LoadScene(1);
@@ -15,8 +25,20 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    public void OpenCredits()
+    {
+        Main.SetActive(false);
+        CreditsMenu.SetActive(true);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ReturnMainMenu()
+    {
+        Main.SetActive(true);
+        CreditsMenu.SetActive(false);
     }
 }

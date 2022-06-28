@@ -6,7 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public bool isTyping = false;
+    public bool playerCantMove = false;
+
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private GameObject deathScreen;
 
     private void Awake()
     {
@@ -14,5 +17,18 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         else
             instance = this;
+    }
+
+    public void PlayerWon()
+    {
+        playerCantMove = true;
+        winScreen.active = true;
+        CheckpointManager.instance.ResetCheckPoint();
+    }
+
+    public void PlayerDied()
+    {
+        deathScreen.active = true;
+        playerCantMove = true;
     }
 }

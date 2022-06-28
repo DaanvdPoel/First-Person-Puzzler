@@ -11,7 +11,7 @@ public class MouseLook : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.isTyping == false)
+        if (GameManager.instance.playerCantMove == false)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

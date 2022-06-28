@@ -15,6 +15,7 @@ public class TimeSwitch : MonoBehaviour
     public bool presentActive;
     public float timeSwitchTimer;
     public float showHint;
+    public TimeswitchCameraEffects tce;
 
     private void Awake()
     {
@@ -52,13 +53,13 @@ public class TimeSwitch : MonoBehaviour
         {
             pastText.SetActive(false);
             presentText.SetActive(false);
-            if (timeSwitchTimer <= 0f)
+            if (timeSwitchTimer < 0f)
             {
-
                 if (present.activeInHierarchy == true)
                 {
                     past.SetActive(true);
                     present.SetActive(false);
+                    tce.PerformAnimation();
 
                     pastActive = true;
                     presentActive = false;
@@ -69,6 +70,7 @@ public class TimeSwitch : MonoBehaviour
                 {
                     past.SetActive(false);
                     present.SetActive(true);
+                    tce.PerformAnimation();
 
                     presentActive = true;
                     pastActive = false;

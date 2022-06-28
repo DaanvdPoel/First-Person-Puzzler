@@ -4,6 +4,8 @@ public class DoorTrigger : MonoBehaviour
 {
     public bool isDoorLocked = false;
     [SerializeField] private Door[] doors;
+    [SerializeField] private AudioSource doorAudioSource;
+    [SerializeField] private AudioClip openDoorSFX;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +16,7 @@ public class DoorTrigger : MonoBehaviour
                 if (!doors[i].IsOpen)
                 {
                     doors[i].Open(other.transform.position);
+                    doorAudioSource.PlayOneShot(openDoorSFX);
                 }
             }
         }

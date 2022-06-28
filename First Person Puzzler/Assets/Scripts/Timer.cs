@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
     public float startTime;
     public float timeRemaining;
-    public Text timerUI;
+    //public TextMeshProUGUI timerUI;
 
     private void Start()
     {
@@ -18,14 +18,9 @@ public class Timer : MonoBehaviour
     {
         if(timeRemaining <= 0)
         {
-            GameOver();
+            GameManager.instance.PlayerDied();
         }
-        timerUI.text = "Time: " + timeRemaining.ToString("0.0");
+        //timerUI.text = "Time Remaining: " + timeRemaining.ToString("0.0");
         timeRemaining = timeRemaining - Time.deltaTime;
-    }
-
-    private void GameOver()
-    {
-        
     }
 }
