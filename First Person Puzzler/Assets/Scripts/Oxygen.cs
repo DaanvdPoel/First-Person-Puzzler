@@ -16,7 +16,7 @@ public class Oxygen : MonoBehaviour
     [SerializeField] private bool oxygenLevel;
     [SerializeField] private bool oxygenHelmetPickedUp;
     [SerializeField] private float oxygenLoweringTimer;
-    [SerializeField] private int oxygenAmmount = 100;
+    [SerializeField] private float oxygenAmmount = 100;
 
     public TimeSwitch timeSwitching;
 
@@ -27,11 +27,11 @@ public class Oxygen : MonoBehaviour
         oxygenHelmetPickedUp = false;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     { 
-        OxygenText.text = "Oxygen level: " + oxygenAmmount;
+        OxygenText.text = "Oxygen level: " + oxygenAmmount.ToString("0");
 
+        //when the helmet has not been picked up your oxygen will deplete
         if(oxygenHelmetPickedUp == false || timeSwitching.presentActive == true)
         {
             oxygenLevel = false;
@@ -40,11 +40,12 @@ public class Oxygen : MonoBehaviour
                 oxygenLoweringTimer = oxygenLoweringTimer -= Time.deltaTime;
                 if (oxygenLoweringTimer <= 0)
                 {
-                    oxygenAmmount = oxygenAmmount - 1;
+                    oxygenAmmount = oxygenAmmount - 0.5f;
                     oxygenLoweringTimer = 0.2f;
                 }
             }
 
+            //when oxygen <= 0 you will die
             if (oxygenAmmount <= 0)
             {
                 GameManager.instance.PlayerDied();
@@ -57,12 +58,16 @@ public class Oxygen : MonoBehaviour
             }
         }
 
+        //when the helmet has been picked up and present is active your oxygen will continue to deplete
+        //when the helmet has been picked up and past is active your oxygen will reset
         if (timeSwitching.pastActive == true && oxygenHelmetPickedUp == true)
         {
             OxygenPresent.SetActive(false);
             OxygenPast.SetActive(true);
             oxygenLevel = true;
-            oxygenAmmount = 100;
+
+            if(oxygenAmmount < 100)
+            oxygenAmmount = oxygenAmmount + 0.5f;
         }
 
         if(timeSwitching.presentActive == true && oxygenHelmetPickedUp == true)
@@ -72,6 +77,7 @@ public class Oxygen : MonoBehaviour
         }
     }
 
+    //when interacting with the helmet it will be picked up
     private void OnTriggerStay(Collider other)
     {
         if(other.CompareTag("Oxygen"))

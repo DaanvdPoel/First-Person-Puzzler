@@ -175,13 +175,9 @@ MonoBehaviour:
   greenWirePressed: 0
   puzzleComplete: 0
   correctBlueWire: {fileID: 4728720417553902492}
-  incorrectBlueWire: {fileID: 4728720417051721711}
   correctRedWire: {fileID: 4728720415545559650}
-  incorrectRedWire: {fileID: 4728720416471401855}
   correctYellowWire: {fileID: 4728720416679297106}
-  incorrectYellowWire: {fileID: 4728720415927043805}
   correctGreenWire: {fileID: 4728720415893869606}
-  incorrectGreenWire: {fileID: 4728720415921055265}
   BluePressed: {fileID: 4728720416419298085}
   RedPressed: {fileID: 4728720415572415937}
   YellowPressed: {fileID: 4728720417062014740}
@@ -1085,7 +1081,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1526,7 +1522,7 @@ RectTransform:
   - {fileID: 4728720416787889275}
   - {fileID: 4728720416864557318}
   m_Father: {fileID: 4728720417353982746}
-  m_RootOrder: 10
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1896,7 +1892,7 @@ RectTransform:
   - {fileID: 4728720416603453788}
   - {fileID: 4728720416538247549}
   m_Father: {fileID: 4728720417353982746}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2325,6 +2321,7 @@ MonoBehaviour:
   presentActive: 0
   timeSwitchTimer: 0
   showHint: 0
+  tce: {fileID: 0}
 --- !u!1 &4728720415819928236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3439,7 +3436,7 @@ RectTransform:
   m_Children:
   - {fileID: 4728720415863012904}
   m_Father: {fileID: 4728720417353982746}
-  m_RootOrder: 9
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3902,7 +3899,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4728720417353982746}
-  m_RootOrder: 12
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9754,12 +9751,12 @@ RectTransform:
   - {fileID: 4728720417506706811}
   - {fileID: 4728720416849893227}
   - {fileID: 4728720416241797903}
-  - {fileID: 4728720416040881960}
-  - {fileID: 4728720415640081595}
-  - {fileID: 4728720417410107828}
   - {fileID: 4728720416136211663}
   - {fileID: 4728720417486875180}
+  - {fileID: 4728720417410107828}
   - {fileID: 4728720415747673406}
+  - {fileID: 4728720415640081595}
+  - {fileID: 4728720416040881960}
   - {fileID: 4728720415607978909}
   m_Father: {fileID: 935296817442679759}
   m_RootOrder: 4
@@ -10169,7 +10166,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4728720417353982746}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11172,13 +11169,9 @@ MonoBehaviour:
   greenWirePressed: 0
   puzzleComplete: 0
   correctBlueWire: {fileID: 4728720416432007344}
-  incorrectBlueWire: {fileID: 4728720417300467070}
   correctRedWire: {fileID: 4728720415737698691}
-  incorrectRedWire: {fileID: 4728720416402150837}
   correctYellowWire: {fileID: 4728720416832588830}
-  incorrectYellowWire: {fileID: 4728720416924402038}
   correctGreenWire: {fileID: 4728720415586273592}
-  incorrectGreenWire: {fileID: 4728720415558719369}
   BluePressed: {fileID: 4728720417306011102}
   RedPressed: {fileID: 4728720417506893783}
   YellowPressed: {fileID: 4728720416687796863}
@@ -11535,11 +11528,6 @@ PrefabInstance:
       objectReference: {fileID: 4728720417486875181}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1164755aecfbb9438eb75d183e3c9e4, type: 3}
---- !u!1 &5405965991576606005 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 763944283494894726, guid: a1164755aecfbb9438eb75d183e3c9e4, type: 3}
-  m_PrefabInstance: {fileID: 4728720417079122355}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5405965991576605963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 763944283494894776, guid: a1164755aecfbb9438eb75d183e3c9e4, type: 3}
@@ -11548,6 +11536,11 @@ Transform:
 --- !u!143 &5405965991576606007 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 763944283494894724, guid: a1164755aecfbb9438eb75d183e3c9e4, type: 3}
+  m_PrefabInstance: {fileID: 4728720417079122355}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5405965991576606005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 763944283494894726, guid: a1164755aecfbb9438eb75d183e3c9e4, type: 3}
   m_PrefabInstance: {fileID: 4728720417079122355}
   m_PrefabAsset: {fileID: 0}
 --- !u!82 &4728720417235851579

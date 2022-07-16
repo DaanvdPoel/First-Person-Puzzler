@@ -39,6 +39,7 @@ public class WireConnecting : MonoBehaviour
 
     private void Update()
     {
+        //depending on which time it currently is a different panel will be shown
         if(WirePanelPast.active == true || WirePanelPresent.active == true)
         {
             GameManager.instance.playerCantMove = true;
@@ -54,6 +55,7 @@ public class WireConnecting : MonoBehaviour
             }
         }
 
+        //when puzzle completed you gain access to the door and the panel will be disabled
         if(blueWire == true && redWire == true && yellowWire == true && greenWire == true && puzzleComplete == false)
         {
             puzzleComplete = true;

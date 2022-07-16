@@ -49,6 +49,8 @@ public class TimeSwitch : MonoBehaviour
         timeSwitchTimer -= Time.deltaTime;
         showHint = showHint += Time.deltaTime;
 
+        //when P is pressed the game will switch between the past and the present based on where you are currently
+        //a hint will show up accordingly for the correct current time which states that you can switch to a different time
         if (Input.GetKeyUp(KeyCode.P))
         {
             pastText.SetActive(false);
